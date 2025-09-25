@@ -1,5 +1,6 @@
 import ConceptCard from "./ConceptCard";
 import CodeExample from "./CodeExample";
+import CircuitVisualization from "./CircuitVisualization";
 import { Cpu, Zap, Clock, Database, Workflow, Layers, BookOpen, History, Settings } from "lucide-react";
 
 const LearningSection = () => {
@@ -180,10 +181,16 @@ end Behavioral;`
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="space-y-16">
           {codeExamples.map((example, index) => (
             <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 200}ms` }}>
-              <CodeExample {...example} />
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-8">
+                <CodeExample {...example} />
+                <CircuitVisualization 
+                  type={index === 0 ? "counter" : "flipflop"}
+                  title={example.title}
+                />
+              </div>
             </div>
           ))}
         </div>
