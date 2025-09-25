@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Copy, Play } from "lucide-react";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 interface CodeExampleProps {
   title: string;
@@ -12,11 +13,27 @@ interface CodeExampleProps {
 
 const CodeExample = ({ title, description, code, language = "vhdl" }: CodeExampleProps) => {
   const [copied, setCopied] = useState(false);
+  const [running, setRunning] = useState(false);
+  const { toast } = useToast();
 
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
+  };
+
+  const handleRun = () => {
+    setRunning(true);
+    
+    // Simula execução do código VHDL
+    setTimeout(() => {
+      setRunning(false);
+      toast({
+        title: "Simulação Concluída ✅",
+        description: `${title} foi executado com sucesso! Em um ambiente real, este código seria sintetizado para FPGA/ASIC.`,
+        duration: 4000,
+      });
+    }, 2000);
   };
 
   return (
@@ -36,9 +53,15 @@ const CodeExample = ({ title, description, code, language = "vhdl" }: CodeExampl
             <Copy className="w-4 h-4" />
             {copied ? "Copiado!" : "Copiar"}
           </Button>
-          <Button variant="code" size="sm" className="shrink-0">
+          <Button 
+            variant="code" 
+            size="sm" 
+            className="shrink-0"
+            onClick={handleRun}
+            disabled={running}
+          >
             <Play className="w-4 h-4" />
-            Executar
+            {running ? "Executando..." : "Executar"}
           </Button>
         </div>
       </CardHeader>
