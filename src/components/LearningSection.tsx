@@ -1,8 +1,32 @@
 import ConceptCard from "./ConceptCard";
 import CodeExample from "./CodeExample";
-import { Cpu, Zap, Clock, Database, Workflow, Layers } from "lucide-react";
+import { Cpu, Zap, Clock, Database, Workflow, Layers, BookOpen, History, Settings } from "lucide-react";
 
 const LearningSection = () => {
+  const basicConcepts = [
+    {
+      title: "O que é VHDL?",
+      description: "VHDL (VHSIC Hardware Description Language) é uma linguagem de descrição de hardware usada para modelar sistemas eletrônicos digitais. Permite descrever tanto o comportamento quanto a estrutura de circuitos digitais.",
+      icon: <BookOpen className="w-6 h-6" />,
+      example: "-- VHDL descreve hardware de forma textual",
+      color: "blue" as const
+    },
+    {
+      title: "História",
+      description: "Desenvolvida pelo Departamento de Defesa dos EUA nos anos 1980, VHDL tornou-se padrão IEEE 1076 em 1987. Foi criada para documentar e simular circuitos digitais complexos de forma padronizada.",
+      icon: <History className="w-6 h-6" />,
+      example: "IEEE Standard 1076-1987 (primeira versão)",
+      color: "purple" as const
+    },
+    {
+      title: "Características",
+      description: "Linguagem fortemente tipada, suporta paralelismo, hierarquia, simulação temporal e síntese. Ideal para FPGAs e ASICs, com recursos para teste e verificação de hardware.",
+      icon: <Settings className="w-6 h-6" />,
+      example: "Concorrência, tipos definidos pelo usuário, generics",
+      color: "cyan" as const
+    }
+  ];
+
   const concepts = [
     {
       title: "Entidades e Arquiteturas",
@@ -110,7 +134,25 @@ end Behavioral;`
   return (
     <section className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
-        {/* Concepts Section */}
+        {/* Basic Concepts Section */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-tech-blue to-tech-cyan bg-clip-text text-transparent">
+            Introdução ao VHDL
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Comece sua jornada entendendo o que é VHDL, sua origem e principais características
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-32">
+          {basicConcepts.map((concept, index) => (
+            <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 150}ms` }}>
+              <ConceptCard {...concept} />
+            </div>
+          ))}
+        </div>
+
+        {/* Advanced Concepts Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-tech-purple to-tech-blue bg-clip-text text-transparent">
             Conceitos Fundamentais
