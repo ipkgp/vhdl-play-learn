@@ -133,7 +133,7 @@ end Behavioral;`
   ];
 
   return (
-    <section className="py-20 px-6">
+    <section id="learning-section" className="py-20 px-6">
       <div className="max-w-7xl mx-auto">
         {/* Basic Concepts Section */}
         <div className="text-center mb-16">

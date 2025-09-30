@@ -33,7 +33,17 @@ const Hero = () => {
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-500">
-          <Button variant="hero" size="lg" className="text-lg px-8 py-6">
+          <Button 
+            variant="hero" 
+            size="lg" 
+            className="text-lg px-8 py-6"
+            onClick={() => {
+              document.getElementById('learning-section')?.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }}
+          >
             Começar Agora
           </Button>
           <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-tech-purple/30 hover:border-tech-purple">
