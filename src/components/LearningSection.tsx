@@ -172,7 +172,7 @@ end Behavioral;`
         </div>
 
         {/* Code Examples Section */}
-        <div className="text-center mb-16">
+        <div id="code-examples" className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-tech-cyan to-tech-green bg-clip-text text-transparent">
             Exemplos Práticos
           </h2>

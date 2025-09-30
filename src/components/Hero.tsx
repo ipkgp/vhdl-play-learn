@@ -46,7 +46,17 @@ const Hero = () => {
           >
             Começar Agora
           </Button>
-          <Button variant="outline" size="lg" className="text-lg px-8 py-6 border-tech-purple/30 hover:border-tech-purple">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="text-lg px-8 py-6 border-tech-purple/30 hover:border-tech-purple"
+            onClick={() => {
+              document.getElementById('code-examples')?.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+              });
+            }}
+          >
             Ver Exemplos
           </Button>
         </div>
