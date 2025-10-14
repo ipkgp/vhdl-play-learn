@@ -1,73 +1,92 @@
-# Welcome to your Lovable project
+🧠 Aprender VHDL — Plataforma Educacional Interativa
 
-## Project info
+Aprender VHDL é uma plataforma web interativa desenvolvida para ensinar a linguagem de descrição de hardware VHDL de forma prática, acessível e multilíngue.
+O projeto combina teoria, exercícios, laboratórios e quizzes para auxiliar estudantes e profissionais na compreensão do funcionamento do design digital e lógica programável (FPGA, ASIC, etc.).
 
-**URL**: https://lovable.dev/projects/047363c4-09cc-4989-925a-29be928ee2b7
+🚀 Funcionalidades Principais
 
-## How can I edit this code?
+🌍 Suporte a múltiplos idiomas: Português, Inglês e Espanhol.
 
-There are several ways of editing your application.
+🧩 Aprendizado estruturado: módulos organizados do básico ao avançado.
 
-**Use Lovable**
+💡 Exercícios interativos: pratique conceitos de forma dinâmica.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/047363c4-09cc-4989-925a-29be928ee2b7) and start prompting.
+🔬 Laboratórios práticos: simulações e projetos como o display de 7 segmentos.
 
-Changes made via Lovable will be committed automatically to this repo.
+🎯 Sistema de quiz: teste seus conhecimentos e acompanhe o progresso.
 
-**Use your preferred IDE**
+🕹️ Gamificação: conquistas e desafios para manter o aprendizado motivador.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+🌓 Modo claro e escuro: design responsivo e confortável para leitura.
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+🧩 Estrutura do Projeto
+📂 src/
+ ┣ 📁 components/           # Componentes reutilizáveis da interface
+ ┣ 📁 sections/             # Seções principais do site (Hero, About, Resources etc.)
+ ┣ 📁 modules/              # Módulos educacionais (básico, intermediário, laboratório)
+ ┣ 📁 assets/               # Ícones, imagens e recursos visuais
+ ┣ 📁 i18n/                 # Arquivos de tradução e configuração multilíngue
+ ┣ 📄 App.jsx               # Componente principal do aplicativo
+ ┣ 📄 index.jsx             # Ponto de entrada
+ ┗ 📄 styles.css            # Estilos globais
 
-Follow these steps:
+🏗️ Estrutura de Aprendizado
+Nível	Módulo	Descrição
+🧱 Básico	Fundamentos do VHDL	Introdução à linguagem e primeiros exercícios
+⚙️ Intermediário	Estruturas e Componentes	Modelagem de circuitos e projetos médios
+💻 Prático	Laboratório	Projetos aplicados, como display de 7 segmentos
+🧠 Revisão	Quiz e Glossário	Testes e referências rápidas
+🕹️ Gamificação	Conquistas	Sistema de progressão e recompensas
+🎨 Design e Usabilidade
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Interface limpa e moderna
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Layout totalmente responsivo
 
-# Step 3: Install the necessary dependencies.
-npm i
+Navegação fluida com rolagem suave
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Alternância de tema (claro/escuro)
 
-**Edit a file directly in GitHub**
+Ícones minimalistas e cores harmônicas (azul, cinza e amarelo)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+🌐 Internacionalização (i18n)
 
-**Use GitHub Codespaces**
+A plataforma detecta automaticamente o idioma do navegador e permite alternância manual entre:
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+🇧🇷 Português
 
-## What technologies are used for this project?
+🇺🇸 English
 
-This project is built with:
+🇪🇸 Español
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Todo o conteúdo e navegação estão traduzidos de forma consistente entre os idiomas.
 
-## How can I deploy this project?
+⚙️ Tecnologias Utilizadas
 
-Simply open [Lovable](https://lovable.dev/projects/047363c4-09cc-4989-925a-29be928ee2b7) and click on Share -> Publish.
+React.js — Framework principal
 
-## Can I connect a custom domain to my Lovable project?
+Tailwind CSS — Estilização e responsividade
 
-Yes, you can!
+Framer Motion — Animações e transições suaves
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+i18next — Gerenciamento de múltiplos idiomas
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Vite — Build e ambiente de desenvolvimento rápido
+
+📈 Futuras Expansões
+
+Adição de novos módulos de aprendizado.
+
+Suporte a outras linguagens de descrição e programação (Verilog, SystemVerilog, Python).
+
+Integração com simuladores de VHDL online.
+
+Perfis de usuário e sistema de progresso.
+
+
+Abra um pull request com suas melhorias, correções ou novas ideias.
+Certifique-se de manter o código limpo, comentado e com commits descritivos.
+
+🌟 Agradecimentos
+
+A todos os estudantes, professores e entusiastas da eletrônica digital que acreditam no poder do aprendizado aberto e colaborativo.
