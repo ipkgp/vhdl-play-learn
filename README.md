@@ -1,4 +1,4 @@
-🧠 Aprender VHDL — Plataforma Educacional Interativa
+*🧠 Aprender VHDL — Plataforma Educacional Interativa*
 
 Aprender VHDL é uma plataforma web interativa desenvolvida para ensinar a linguagem de descrição de hardware VHDL de forma prática, acessível e multilíngue.
 O projeto combina teoria, exercícios, laboratórios e quizzes para auxiliar estudantes e profissionais na compreensão do funcionamento do design digital e lógica programável (FPGA, ASIC, etc.).
