@@ -1,0 +1,158 @@
+{
+  "nav": {
+    "home": "Home",
+    "learning": "Learning",
+    "examples": "Examples",
+    "resources": "Resources",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Learn VHDL",
+    "subtitle": "Master the world's most widely used hardware description language",
+    "description": "A complete and interactive course for beginners and professionals who want to learn VHDL in a practical and efficient way",
+    "cta": {
+      "start": "Get Started",
+      "examples": "View Examples"
+    }
+  },
+  "basicExercises": {
+    "title": "Basic Exercises",
+    "subtitle": "Practice VHDL fundamentals",
+    "progress": "Progress",
+    "verify": "Verify Code",
+    "next": "Next Exercise",
+    "previous": "Previous",
+    "completed": "Congratulations! You've completed all basic exercises!",
+    "instructions": "Instructions",
+    "hint": "Hint",
+    "truthTable": "Truth Table",
+    "feedback": {
+      "correct": "Correct!",
+      "incorrect": "Incorrect code. Please check again."
+    }
+  },
+  "quiz": {
+    "title": "Interactive Quiz",
+    "subtitle": "Test your VHDL knowledge",
+    "question": "Question",
+    "of": "of",
+    "next": "Next",
+    "previous": "Previous",
+    "finish": "Finish Quiz",
+    "restart": "Restart Quiz",
+    "score": "Score",
+    "explanation": "Explanation"
+  },
+  "intermediateExercises": {
+    "title": "Intermediate Exercises",
+    "subtitle": "More advanced VHDL challenges"
+  },
+  "tutorial": {
+    "title": "Step-by-Step Tutorial",
+    "subtitle": "7-Segment Display"
+  },
+  "lab": {
+    "title": "Interactive Lab",
+    "subtitle": "Experiment and test your code"
+  },
+  "glossary": {
+    "title": "Interactive Glossary",
+    "subtitle": "Essential VHDL terms and concepts",
+    "search": "Search term...",
+    "categories": {
+      "all": "All",
+      "basic": "Basic",
+      "signals": "Signals",
+      "types": "Types",
+      "structures": "Structures"
+    },
+    "example": "Example"
+  },
+  "gamification": {
+    "title": "Your Achievements",
+    "subtitle": "Track your progress and unlock badges",
+    "progress": "Overall Progress",
+    "earned": "Unlocked Achievements",
+    "locked": "Locked Achievements",
+    "points": "points"
+  },
+  "resources": {
+    "title": "Resources",
+    "subtitle": "Complementary materials to deepen your knowledge",
+    "documentation": {
+      "title": "Documentation",
+      "items": {
+        "ieee": "IEEE Standard VHDL",
+        "tutorials": "Online Tutorials",
+        "examples": "Code Examples"
+      }
+    },
+    "tools": {
+      "title": "Tools",
+      "items": {
+        "simulators": "VHDL Simulators",
+        "ides": "Recommended IDEs",
+        "fpga": "FPGA Tools"
+      }
+    },
+    "community": {
+      "title": "Community",
+      "items": {
+        "forums": "Forums",
+        "discord": "Discord",
+        "github": "GitHub Projects"
+      }
+    }
+  },
+  "about": {
+    "title": "About the Project",
+    "subtitle": "Our mission is to democratize VHDL education",
+    "mission": {
+      "title": "Mission",
+      "text": "Make VHDL learning accessible, interactive, and efficient for students and professionals worldwide."
+    },
+    "vision": {
+      "title": "Vision",
+      "text": "To be the leading VHDL educational platform, recognized for content quality and learning experience."
+    },
+    "values": {
+      "title": "Values",
+      "items": {
+        "quality": "Content Quality",
+        "accessibility": "Accessibility",
+        "innovation": "Educational Innovation",
+        "community": "Active Community"
+      }
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Send your questions, suggestions or feedback",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message",
+      "sending": "Sending..."
+    },
+    "success": "Message sent successfully!",
+    "error": "Error sending message. Please try again."
+  },
+  "footer": {
+    "description": "Educational platform to learn VHDL interactively and practically.",
+    "links": {
+      "title": "Useful Links",
+      "documentation": "Documentation",
+      "tutorials": "Tutorials",
+      "examples": "Examples"
+    },
+    "support": {
+      "title": "Support",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "community": "Community"
+    },
+    "rights": "All rights reserved."
+  }
+}

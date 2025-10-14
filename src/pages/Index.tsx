@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import LearningSection from "@/components/LearningSection";
 import VHDLBasicExercises from "@/components/VHDLBasicExercises";
@@ -7,49 +8,54 @@ import VHDLStepByStepTutorial from "@/components/VHDLStepByStepTutorial";
 import VHDLSevenSegmentLab from "@/components/VHDLSevenSegmentLab";
 import VHDLGlossary from "@/components/VHDLGlossary";
 import VHDLGamification from "@/components/VHDLGamification";
+import Resources from "./Resources";
+import About from "./About";
+import Contact from "./Contact";
 import Footer from "@/components/Footer";
 import { Toaster } from "@/components/ui/toaster";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
-      <Hero />
-      <LearningSection />
+      <Header />
+      <div id="home">
+        <Hero />
+      </div>
+      <div id="learning-section">
+        <LearningSection />
+      </div>
       
-      {/* Fase 1: Exercícios Básicos */}
-      <section id="exercicios-basicos" className="py-20 px-4 bg-gradient-to-b from-muted/20 to-background">
+      <section id="code-examples" className="py-20 px-4 bg-gradient-to-b from-muted/20 to-background scroll-mt-16">
         <VHDLBasicExercises />
       </section>
       
-      {/* Fase 2: Quiz Interativo */}
-      <section id="quiz" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20">
+      <section id="quiz" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20 scroll-mt-16">
         <VHDLQuizSystem />
       </section>
       
-      {/* Fase 3: Exercícios Intermediários */}
-      <section id="exercicios-intermediarios" className="py-20 px-4 bg-gradient-to-b from-muted/20 to-background">
+      <section id="intermediate" className="py-20 px-4 bg-gradient-to-b from-muted/20 to-background scroll-mt-16">
         <VHDLIntermediateExercises />
       </section>
       
-      {/* Tutorial Passo-a-Passo (Display 7 Segmentos) */}
-      <section id="tutorial-display" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20">
+      <section id="tutorial" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20 scroll-mt-16">
         <VHDLStepByStepTutorial />
       </section>
       
-      {/* Laboratório Interativo */}
-      <section id="laboratorio" className="py-20 px-4 bg-gradient-to-b from-muted/20 to-background">
+      <section id="lab" className="py-20 px-4 bg-gradient-to-b from-muted/20 to-background scroll-mt-16">
         <VHDLSevenSegmentLab />
       </section>
       
-      {/* Fase 4: Glossário Interativo */}
-      <section id="glossario" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20">
+      <section id="glossary" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20 scroll-mt-16">
         <VHDLGlossary />
       </section>
       
-      {/* Fase 4: Sistema de Gamificação */}
-      <section id="conquistas" className="py-20 px-4 bg-gradient-to-b from-muted/20 to-background">
+      <section id="achievements" className="py-20 px-4 bg-gradient-to-b from-muted/20 to-background scroll-mt-16">
         <VHDLGamification />
       </section>
+
+      <Resources />
+      <About />
+      <Contact />
       
       <Footer />
       <Toaster />
