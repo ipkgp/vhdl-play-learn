@@ -9,11 +9,25 @@
   },
   "hero": {
     "title": "Aprenda VHDL",
-    "subtitle": "Domine a linguagem de descrição de hardware mais utilizada no mundo",
-    "description": "Um curso completo e interativo para iniciantes e profissionais que querem aprender VHDL de forma prática e eficiente",
+    "subtitle": "Domine a linguagem de descrição de hardware de forma intuitiva e prática",
+    "description": "Do básico aos conceitos avançados, aprenda VHDL com exemplos reais e explicações claras que tornam o hardware design acessível para todos.",
     "cta": {
       "start": "Começar Agora",
       "examples": "Ver Exemplos"
+    }
+  },
+  "learning": {
+    "intro": {
+      "title": "Introdução ao VHDL",
+      "subtitle": "Comece sua jornada entendendo o que é VHDL, sua origem e principais características"
+    },
+    "fundamentals": {
+      "title": "Conceitos Fundamentais",
+      "subtitle": "Domine os pilares do VHDL através de explicações claras e exemplos práticos"
+    },
+    "examples": {
+      "title": "Exemplos Práticos",
+      "subtitle": "Código VHDL real que você pode executar e modificar"
     }
   },
   "basicExercises": {

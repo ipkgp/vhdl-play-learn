@@ -1,9 +1,12 @@
+import { useTranslation } from "react-i18next";
 import ConceptCard from "./ConceptCard";
 import CodeExample from "./CodeExample";
 import CircuitVisualization from "./CircuitVisualization";
 import { Cpu, Zap, Clock, Database, Workflow, Layers, BookOpen, History, Settings } from "lucide-react";
 
 const LearningSection = () => {
+  const { t } = useTranslation();
+  
   const basicConcepts = [
     {
       title: "O que é VHDL?",
@@ -138,10 +141,10 @@ end Behavioral;`
         {/* Basic Concepts Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-tech-blue to-tech-cyan bg-clip-text text-transparent">
-            Introdução ao VHDL
+            {t('learning.intro.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Comece sua jornada entendendo o que é VHDL, sua origem e principais características
+            {t('learning.intro.subtitle')}
           </p>
         </div>
 
@@ -156,10 +159,10 @@ end Behavioral;`
         {/* Advanced Concepts Section */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-tech-purple to-tech-blue bg-clip-text text-transparent">
-            Conceitos Fundamentais
+            {t('learning.fundamentals.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Domine os pilares do VHDL através de explicações claras e exemplos práticos
+            {t('learning.fundamentals.subtitle')}
           </p>
         </div>
 
@@ -174,10 +177,10 @@ end Behavioral;`
         {/* Code Examples Section */}
         <div id="code-examples" className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-tech-cyan to-tech-green bg-clip-text text-transparent">
-            Exemplos Práticos
+            {t('learning.examples.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Código VHDL real que você pode executar e modificar
+            {t('learning.examples.subtitle')}
           </p>
         </div>
 

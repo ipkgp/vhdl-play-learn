@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 import heroImage from "@/assets/vhdl-hero.jpg";
 
 const Hero = () => {
+  const { t } = useTranslation();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with overlay */}
@@ -23,13 +26,13 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-20 text-center px-6 max-w-4xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-tech-purple to-tech-blue bg-clip-text text-transparent animate-fade-in">
-          Aprenda VHDL
+          {t('hero.title')}
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-8 animate-fade-in delay-200">
-          Domine a linguagem de descrição de hardware de forma intuitiva e prática
+          {t('hero.subtitle')}
         </p>
         <p className="text-lg text-muted-foreground/80 mb-12 max-w-2xl mx-auto animate-fade-in delay-300">
-          Do básico aos conceitos avançados, aprenda VHDL com exemplos reais e explicações claras que tornam o hardware design acessível para todos.
+          {t('hero.description')}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in delay-500">
@@ -44,7 +47,7 @@ const Hero = () => {
               });
             }}
           >
-            Começar Agora
+            {t('hero.cta.start')}
           </Button>
           <Button 
             variant="outline" 
@@ -57,7 +60,7 @@ const Hero = () => {
               });
             }}
           >
-            Ver Exemplos
+            {t('hero.cta.examples')}
           </Button>
         </div>
       </div>
