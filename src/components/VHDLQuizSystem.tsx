@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
@@ -129,21 +130,23 @@ const questions: Question[] = [
 ];
 
 const VHDLQuizSystem = () => {
+  const { t } = useTranslation();
+  const { toast } = useToast();
+  
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [score, setScore] = useState(0);
   const [answeredQuestions, setAnsweredQuestions] = useState<boolean[]>(new Array(questions.length).fill(false));
   const [quizCompleted, setQuizCompleted] = useState(false);
-  const { toast } = useToast();
 
   const question = questions[currentQuestion];
 
   const handleSubmit = () => {
     if (selectedAnswer === null) {
       toast({
-        title: "Selecione uma resposta",
-        description: "Por favor, escolha uma opção antes de verificar.",
+        title: t('quiz.selectAnswer'),
+        description: t('quiz.selectPrompt'),
         variant: "destructive",
       });
       return;
@@ -210,26 +213,26 @@ const VHDLQuizSystem = () => {
           <CardContent className="pt-6 text-center space-y-6">
             <Trophy className="w-20 h-20 text-primary mx-auto" />
             <div>
-              <h3 className="text-3xl font-bold mb-2">Quiz Concluído! 🎉</h3>
+              <h3 className="text-3xl font-bold mb-2">{t('quiz.completed')}</h3>
               <p className="text-4xl font-bold text-primary my-4">
                 {score} / {questions.length}
               </p>
               <p className="text-xl text-muted-foreground">
-                Você acertou {percentage.toFixed(0)}% das questões!
+                {t('quiz.resultMessage', { percentage: percentage.toFixed(0) })}
               </p>
             </div>
 
             <div className="bg-muted/50 p-4 rounded-lg max-w-md mx-auto">
-              <p className="font-semibold mb-2">Avaliação:</p>
-              {percentage >= 90 && <p className="text-green-500">Excelente! Você domina VHDL! 🌟</p>}
-              {percentage >= 70 && percentage < 90 && <p className="text-blue-500">Muito bom! Continue praticando! 👍</p>}
-              {percentage >= 50 && percentage < 70 && <p className="text-yellow-500">Bom começo! Revise os conceitos. 📚</p>}
-              {percentage < 50 && <p className="text-orange-500">Continue estudando! Você vai conseguir! 💪</p>}
+              <p className="font-semibold mb-2">{t('quiz.feedback.explanation')}</p>
+              {percentage >= 90 && <p className="text-green-500">{t('quiz.evaluation.excellent')}</p>}
+              {percentage >= 70 && percentage < 90 && <p className="text-blue-500">{t('quiz.evaluation.veryGood')}</p>}
+              {percentage >= 50 && percentage < 70 && <p className="text-yellow-500">{t('quiz.evaluation.good')}</p>}
+              {percentage < 50 && <p className="text-orange-500">{t('quiz.evaluation.keepGoing')}</p>}
             </div>
 
             <Button onClick={handleReset} size="lg">
               <RefreshCw className="w-4 h-4 mr-2" />
-              Reiniciar Quiz
+              {t('quiz.restart')}
             </Button>
           </CardContent>
         </Card>
@@ -241,16 +244,15 @@ const VHDLQuizSystem = () => {
     <div className="max-w-4xl mx-auto space-y-6">
       <div className="text-center space-y-4">
         <h2 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-          Quiz Interativo de VHDL
+          {t('quiz.title')}
         </h2>
         <p className="text-lg text-muted-foreground">
-          Teste seus conhecimentos com feedback imediato!
+          {t('quiz.subtitle')}
         </p>
 
-        {/* Progress Bar */}
         <div className="max-w-md mx-auto">
           <div className="flex justify-between text-sm text-muted-foreground mb-2">
-            <span>Progresso</span>
+            <span>{t('quiz.progress')}</span>
             <span>{Math.round(progress)}%</span>
           </div>
           <div className="h-2 bg-muted rounded-full overflow-hidden">
@@ -261,9 +263,8 @@ const VHDLQuizSystem = () => {
           </div>
         </div>
 
-        {/* Score */}
         <div className="text-center">
-          <span className="text-sm text-muted-foreground">Pontuação: </span>
+          <span className="text-sm text-muted-foreground">{t('quiz.score')}: </span>
           <span className="text-lg font-bold text-primary">
             {score} / {questions.length}
           </span>
@@ -274,12 +275,10 @@ const VHDLQuizSystem = () => {
         <CardHeader>
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-medium text-muted-foreground">
-              Questão {currentQuestion + 1} de {questions.length}
+              {t('quiz.question')} {currentQuestion + 1} {t('quiz.of')} {questions.length}
             </span>
             <span className={`text-sm font-semibold uppercase ${getDifficultyColor(question.difficulty)}`}>
-              {question.difficulty === "easy" && "Fácil"}
-              {question.difficulty === "medium" && "Médio"}
-              {question.difficulty === "hard" && "Difícil"}
+              {t(`quiz.difficulty.${question.difficulty}`)}
             </span>
           </div>
           <CardTitle className="text-xl">{question.question}</CardTitle>
@@ -344,7 +343,7 @@ const VHDLQuizSystem = () => {
                 )}
                 <div>
                   <h4 className="font-semibold mb-1">
-                    {isCorrect ? "Correto! 🎉" : "Incorreto"}
+                    {isCorrect ? t('quiz.feedback.correct') : t('quiz.feedback.incorrect')}
                   </h4>
                   <p className="text-sm">{question.explanation}</p>
                 </div>
@@ -354,14 +353,14 @@ const VHDLQuizSystem = () => {
 
           <div className="flex justify-between pt-4 border-t">
             <Button onClick={handlePrevious} disabled={currentQuestion === 0} variant="outline">
-              Anterior
+              {t('quiz.previous')}
             </Button>
 
             {!showResult ? (
-              <Button onClick={handleSubmit}>Verificar Resposta</Button>
+              <Button onClick={handleSubmit}>{t('quiz.verify')}</Button>
             ) : (
               <Button onClick={handleNext}>
-                {currentQuestion === questions.length - 1 ? "Ver Resultado" : "Próxima"}
+                {currentQuestion === questions.length - 1 ? t('quiz.finish') : t('quiz.next')}
               </Button>
             )}
           </div>
