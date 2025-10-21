@@ -58,39 +58,6 @@
     "score": "Puntuación",
     "explanation": "Explicación"
   },
-  "intermediateExercises": {
-    "title": "Ejercicios Intermedios",
-    "subtitle": "Desafíos más avanzados de VHDL"
-  },
-  "tutorial": {
-    "title": "Tutorial Paso a Paso",
-    "subtitle": "Display de 7 Segmentos"
-  },
-  "lab": {
-    "title": "Laboratorio Interactivo",
-    "subtitle": "Experimenta y prueba tu código"
-  },
-  "glossary": {
-    "title": "Glosario Interactivo",
-    "subtitle": "Términos y conceptos esenciales de VHDL",
-    "search": "Buscar término...",
-    "categories": {
-      "all": "Todos",
-      "basic": "Básico",
-      "signals": "Señales",
-      "types": "Tipos",
-      "structures": "Estructuras"
-    },
-    "example": "Ejemplo"
-  },
-  "gamification": {
-    "title": "Tus Logros",
-    "subtitle": "Sigue tu progreso y desbloquea insignias",
-    "progress": "Progreso General",
-    "earned": "Logros Desbloqueados",
-    "locked": "Logros Bloqueados",
-    "points": "puntos"
-  },
   "resources": {
     "title": "Recursos",
     "subtitle": "Materiales complementarios para profundizar tus conocimientos",
@@ -168,5 +135,252 @@
       "community": "Comunidad"
     },
     "rights": "Todos los derechos reservados."
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Oscuro"
+  },
+  "intermediateExercises": {
+    "title": "Ejercicios Intermedios",
+    "subtitle": "Circuitos aritméticos y secuenciales para dominar VHDL.",
+    "progress": "Progreso",
+    "verify": "Verificar Código",
+    "showHint": "Ver Pista",
+    "hideHint": "Ocultar Pista",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "completed": "¡Nivel Intermedio Completo! 🎉",
+    "completedMessage": "¡Estás dominando VHDL! Continúa practicando con proyectos más avanzados.",
+    "exerciseOf": "Ejercicio {{current}} de {{total}}",
+    "instructions": "Instrucciones",
+    "conceptsApplied": "Conceptos Aplicados",
+    "yourCode": "Tu código VHDL:",
+    "placeholder": "Escribe tu código VHDL aquí...",
+    "feedback": {
+      "error": "El código aún no está completo. Revisa las instrucciones e intenta nuevamente."
+    },
+    "exercises": {
+      "halfAdder": {
+        "title": "Half Adder (Medio Sumador)",
+        "description": "Circuito que suma dos bits, generando la suma (S) y el acarreo (carry out - C).",
+        "instructions": [
+          "Crea una entidad 'half_adder' con entradas 'a' y 'b', salidas 's' (suma) y 'c' (carry)",
+          "La suma es: s <= a xor b;",
+          "El carry es: c <= a and b;"
+        ],
+        "hint": "Usa el operador XOR para la suma y AND para el carry. Recuerda: 1+1 = 10 en binario (suma=0, carry=1).",
+        "successMessage": "¡Excelente! El Half Adder es la base para sumadores más complejos!",
+        "concepts": ["Aritmética binaria", "Operador XOR", "Bit de acarreo"]
+      },
+      "fullAdder": {
+        "title": "Full Adder (Sumador Completo)",
+        "description": "Suma tres bits: a, b y carry_in, produciendo suma y carry_out. Base de los sumadores de múltiples bits.",
+        "instructions": [
+          "Crea una entidad 'full_adder' con entradas a, b, carry_in y salidas s, carry_out",
+          "Suma: s <= a xor b xor carry_in;",
+          "Carry out: carry_out <= (a and b) or (carry_in and (a xor b));"
+        ],
+        "hint": "El Full Adder puede construirse con dos Half Adders. La fórmula del carry_out combina múltiples condiciones con OR.",
+        "successMessage": "¡Perfecto! Los Full Adders se encadenan para crear sumadores de 8, 16, 32 bits!",
+        "concepts": ["Sumadores en cascada", "Propagación de acarreo", "Circuitos aritméticos"]
+      },
+      "decoder2to4": {
+        "title": "Decodificador 2-a-4",
+        "description": "Convierte 2 bits de entrada en 4 salidas, donde solo una salida es '1' a la vez.",
+        "instructions": [
+          "Crea una entidad 'decoder_2to4' con entrada de 2 bits (sel) y salida de 4 bits (y)",
+          "Usa un process con case-when para mapear cada combinación de entrada",
+          "Cuando sel='00', y='0001'; sel='01', y='0010'; sel='10', y='0100'; sel='11', y='1000'"
+        ],
+        "hint": "Usa case sel is ... when '00' => y <= '0001'; ... end case; dentro de un process.",
+        "successMessage": "¡Genial! Los decodificadores son esenciales en la selección de memoria y multiplexación!",
+        "concepts": ["Decodificación", "Sentencia Case", "Codificación One-hot"]
+      },
+      "counter0to3": {
+        "title": "Contador 0-3 con Enable",
+        "description": "Contador de 2 bits (0→1→2→3→0) que solo cuenta cuando enable='1'.",
+        "instructions": [
+          "Crea una entidad 'counter_0to3' con clock, reset, enable y salida count (2 bits)",
+          "Usa process con rising_edge(clock) para lógica síncrona",
+          "Si reset='1': count <= '00'",
+          "Si enable='1': incrementa count (usa numeric_std para conversión)"
+        ],
+        "hint": "Usa library IEEE.NUMERIC_STD.ALL; y convierte: count <= std_logic_vector(unsigned(count) + 1);",
+        "successMessage": "¡Excelente! ¡Has dominado la lógica secuencial con enable!",
+        "concepts": ["Lógica secuencial", "Flanco de reloj", "Señal Enable", "Conversiones numéricas"]
+      }
+    }
+  },
+  "tutorial": {
+    "title": "Tutorial Paso a Paso: Decodificador BCD a 7 Segmentos",
+    "subtitle": "Aprende a desarrollar el código VHDL paso a paso con validación en tiempo real",
+    "progress": "Progreso",
+    "stepsCompleted": "pasos completados",
+    "verify": "Verificar Código",
+    "showHint": "Mostrar Pista",
+    "hideHint": "Ocultar Pista",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "finish": "Finalizar",
+    "allCompleted": "¡Felicitaciones! ¡Has completado todos los pasos del tutorial!",
+    "placeholder": "Escribe tu código VHDL aquí...",
+    "feedback": {
+      "error": "❌ ¡Ups! El código aún no es correcto. Revisa las instrucciones e intenta nuevamente. Haz clic en 'Mostrar Pista' si necesitas ayuda."
+    },
+    "steps": [
+      {
+        "title": "Paso 1: Declaración de la Entidad",
+        "description": "Comencemos declarando la entidad de nuestro decodificador BCD a display de 7 segmentos.",
+        "instruction": "Completa el código declarando los puertos de entrada y salida. La entrada debe ser un vector de 4 bits (BCD) y la salida debe ser un vector de 7 bits (segmentos).",
+        "hint": "Usa 'std_logic_vector' para vectores. Formato: (3 downto 0) para 4 bits y (6 downto 0) para 7 bits.",
+        "successMessage": "✅ ¡Perfecto! Declaraste correctamente la entidad con los puertos de entrada y salida."
+      },
+      {
+        "title": "Paso 2: Inicio de la Arquitectura",
+        "description": "Ahora vamos a crear la arquitectura que implementa la lógica del decodificador.",
+        "instruction": "Declara la arquitectura de tipo 'behavioral' e inicia el proceso sensible a la señal 'entrada'.",
+        "hint": "Usa 'architecture behavioral of bcd_7seg is' y luego 'process(entrada)'.",
+        "successMessage": "✅ ¡Excelente! La estructura de la arquitectura y del proceso es correcta."
+      },
+      {
+        "title": "Paso 3: Estructura Case",
+        "description": "Dentro del proceso, usaremos una estructura 'case' para mapear cada entrada BCD a los segmentos correspondientes.",
+        "instruction": "Agrega la estructura 'case' que analiza el valor de 'entrada' y completa los primeros 3 números (0, 1 y 2).",
+        "hint": "Formato: case entrada is when \"0000\" => segmentos <= \"1111110\"; -- Para el número 0",
+        "successMessage": "✅ ¡Muy bien! Mapeaste correctamente los números 0, 1 y 2. ¡Continúa así!"
+      },
+      {
+        "title": "Paso 4: Completando los Números 3-6",
+        "description": "Agreguemos más números a nuestro decodificador.",
+        "instruction": "Completa el mapeo para los números 3, 4, 5 y 6.",
+        "hint": "3='1111001', 4='0110011', 5='1011011', 6='1011111'",
+        "successMessage": "✅ ¡Fantástico! Solo faltan los últimos números."
+      },
+      {
+        "title": "Paso 5: Finalizando con 7, 8 y 9",
+        "description": "¡Última etapa! Completemos el decodificador con los números restantes.",
+        "instruction": "Completa el mapeo para los números 7, 8 y 9.",
+        "hint": "7='1110000', 8='1111111', 9='1111011'",
+        "successMessage": "🎉 ¡Felicitaciones! ¡Completaste el decodificador BCD a display de 7 segmentos!"
+      }
+    ]
+  },
+  "lab": {
+    "title": "Laboratorio Interactivo VHDL",
+    "subtitle": "Aprende a programar un decodificador BCD a display de 7 segmentos",
+    "editor": "Editor de Código VHDL",
+    "display": "Display de 7 Segmentos",
+    "simulate": "Simular Código",
+    "input": "Entrada Decimal",
+    "binary": "Binario",
+    "currentPattern": "Patrón Actual",
+    "segments": "Mapeo de Segmentos",
+    "placeholder": "Escribe tu código VHDL aquí...",
+    "instructions": "Instrucciones",
+    "instructionsList": [
+      "Completa el código VHDL arriba con los patrones de segmentos",
+      "Cada patrón es una cadena de 7 bits: \"abcdefg\"",
+      "1 = segmento encendido, 0 = segmento apagado",
+      "Haz clic en \"Simular Código\" para probar tu implementación",
+      "Usa el control a la derecha para ver los números en el display"
+    ],
+    "segmentLabels": {
+      "a": "a = segmento superior",
+      "b": "b = superior derecho",
+      "c": "c = inferior derecho",
+      "d": "d = segmento inferior",
+      "e": "e = inferior izquierdo",
+      "f": "f = superior izquierdo",
+      "g": "g = segmento central"
+    },
+    "feedback": {
+      "success": "✅ ¡Código analizado con éxito! Mapeo extraído. Prueba diferentes números en el control de entrada.",
+      "error": "Error al analizar el código VHDL. Verifica la sintaxis de tu mapeo.",
+      "incomplete": "Error: Mapeo incompleto. Asegúrate de definir los patrones para todos los números del 0 al 9."
+    }
+  },
+  "glossary": {
+    "title": "Glosario Interactivo VHDL",
+    "subtitle": "Diccionario completo de términos, operadores y conceptos de VHDL con ejemplos prácticos.",
+    "search": "Buscar término o concepto...",
+    "termsFound": "término(s) encontrado(s)",
+    "noResults": "No se encontraron términos. Intenta con otro término de búsqueda.",
+    "example": "Ejemplo",
+    "categoryCount": "términos",
+    "categories": {
+      "basic": "Conceptos Básicos",
+      "advanced": "Conceptos Avanzados",
+      "operator": "Operadores",
+      "type": "Tipos de Datos"
+    }
+  },
+  "gamification": {
+    "title": "Logros y Progreso",
+    "subtitle": "¡Sigue tu camino de aprendizaje y gana insignias!",
+    "overallProgress": "Tu Progreso General",
+    "continueMessage": "¡Continúa aprendiendo para desbloquear más logros!",
+    "totalPoints": "de {{total}} puntos totales",
+    "totalBadges": "de {{total}} insignias",
+    "completed": "completado",
+    "earnedBadges": "Insignias Ganadas ({{count}})",
+    "nextAchievements": "Próximos Logros ({{count}})",
+    "unlocked": "¡Desbloqueada!",
+    "howToUnlock": "Cómo desbloquear:",
+    "motivational": {
+      "start": {
+        "title": "¡Comienza tu viaje!",
+        "message": "¡Completa tu primer ejercicio para ganar tu primera insignia!"
+      },
+      "progress": {
+        "title": "¡Gran progreso!",
+        "message": "¡Sigue así para desbloquear las {{total}} insignias!"
+      },
+      "master": {
+        "title": "¡Maestro VHDL! 🎉",
+        "message": "¡Felicitaciones! ¡Has ganado TODAS las insignias disponibles!"
+      }
+    },
+    "badges": {
+      "firstSteps": {
+        "title": "Primeros Pasos",
+        "description": "Completa tu primer ejercicio básico",
+        "requirement": "Completa 1 ejercicio básico"
+      },
+      "logicMaster": {
+        "title": "Maestro de la Lógica",
+        "description": "Domina todas las puertas lógicas básicas",
+        "requirement": "Completa todos los ejercicios de puertas lógicas"
+      },
+      "quizChampion": {
+        "title": "Campeón del Quiz",
+        "description": "Obtén 90% o más en el quiz",
+        "requirement": "Acierta 9/10 preguntas del quiz"
+      },
+      "arithmeticExpert": {
+        "title": "Experto en Aritmética",
+        "description": "Completa todos los ejercicios de sumadores",
+        "requirement": "Completa Half Adder y Full Adder"
+      },
+      "sequentialWizard": {
+        "title": "Mago Secuencial",
+        "description": "Domina la lógica secuencial y contadores",
+        "requirement": "Completa el ejercicio del contador"
+      },
+      "displayDecoder": {
+        "title": "Decodificador de Display",
+        "description": "Crea el decodificador BCD a 7 segmentos",
+        "requirement": "Completa el tutorial de 7 segmentos"
+      },
+      "knowledgeSeeker": {
+        "title": "Buscador de Conocimiento",
+        "description": "Consulta el glosario 10 veces",
+        "requirement": "Explora 10 términos del glosario"
+      },
+      "vhdlMaster": {
+        "title": "Maestro VHDL",
+        "description": "Completa TODOS los ejercicios disponibles",
+        "requirement": "100% de finalización"
+      }
+    }
   }
 }
