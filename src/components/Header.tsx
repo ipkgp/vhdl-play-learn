@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { useTheme } from "next-themes";
+import { Link, useLocation } from "react-router-dom"; // 🆕 importamos Link e useLocation
 import { Button } from "@/components/ui/button";
 import { Menu, X, Moon, Sun } from "lucide-react";
 import {
@@ -19,6 +20,7 @@ const languages = [
 const Header = () => {
   const { t, i18n } = useTranslation();
   const { theme, setTheme } = useTheme();
+  const location = useLocation(); // 🆕 usado para destacar o item ativo
   const [mounted, setMounted] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -28,30 +30,21 @@ const Header = () => {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const currentLanguage = languages.find((lang) => lang.code === i18n.language) || languages[0];
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
-  };
-
+  // 🔗 Novo array com rotas
   const navItems = [
-    { id: "home", label: t("nav.home") },
-    { id: "learning-section", label: t("nav.learning") },
-    { id: "code-examples", label: t("nav.examples") },
-    { id: "resources", label: t("nav.resources") },
-    { id: "about", label: t("nav.about") },
-    { id: "contact", label: t("nav.contact") },
+    { path: "/", label: t("nav.home") },
+    { path: "/learning", label: t("nav.learning") },
+    { path: "/examples", label: t("nav.examples") },
+    { path: "/resources", label: t("nav.resources") },
+    { path: "/about", label: t("nav.about") },
+    { path: "/contact", label: t("nav.contact") },
   ];
 
   return (
@@ -65,24 +58,29 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <button
-            onClick={() => scrollToSection("home")}
+          <Link
+            to="/"
             className="text-2xl font-bold bg-gradient-to-r from-tech-blue to-tech-purple bg-clip-text text-transparent hover:opacity-80 transition-opacity"
           >
             VHDL Learn
-          </button>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors relative group"
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-sm font-medium transition-colors relative group ${
+                  location.pathname === item.path
+                    ? "text-tech-blue"
+                    : "text-foreground/80 hover:text-foreground"
+                }`}
               >
                 {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-tech-blue transition-all group-hover:w-full" />
-              </button>
+              </Link>
             ))}
           </nav>
 
@@ -95,11 +93,7 @@ const Header = () => {
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="gap-2"
               >
-                {theme === "dark" ? (
-                  <Sun className="h-4 w-4" />
-                ) : (
-                  <Moon className="h-4 w-4" />
-                )}
+                {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
                 <span className="hidden sm:inline">
                   {theme === "dark" ? t("theme.light") : t("theme.dark")}
                 </span>
@@ -143,13 +137,18 @@ const Header = () => {
         {isMobileMenuOpen && (
           <nav className="md:hidden py-4 border-t border-border animate-fade-in">
             {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="block w-full text-left py-2 px-4 text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-muted/50 rounded transition-colors"
+              <Link
+                key={item.path}
+                to={item.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={`block w-full text-left py-2 px-4 text-sm font-medium rounded transition-colors ${
+                  location.pathname === item.path
+                    ? "text-tech-blue"
+                    : "text-foreground/80 hover:text-foreground hover:bg-muted/50"
+                }`}
               >
                 {item.label}
-              </button>
+              </Link>
             ))}
           </nav>
         )}
