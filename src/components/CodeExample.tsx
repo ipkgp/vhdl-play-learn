@@ -69,7 +69,7 @@ const CodeExample = ({ title, description, code, language = "vhdl" }: CodeExampl
       <CardContent>
         <div className="bg-gradient-to-br from-background/80 to-muted/20 rounded-lg p-6 border border-border/50 font-mono text-sm overflow-x-auto">
           
-          {/* ⬇️ ESTA É A MUDANÇA QUE IMPORTA ⬇️ */}
+
           <pre className="text-tech-cyan whitespace-pre-wrap break-all">
             {/* 'whitespace-pre-wrap' (para as letras voltarem) + 'break-all' (para o layout não quebrar) */}
             <code>{code}</code>

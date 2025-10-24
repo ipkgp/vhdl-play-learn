@@ -85,7 +85,7 @@ const Header = () => {
 
           {/* Theme Toggle, Language Selector & Mobile Menu */}
           <div className="flex items-center gap-3">
- A           {mounted && (
+              {mounted && (
               <Button
                 variant="outline"
                 size="sm"
@@ -118,7 +118,7 @@ const Header = () => {
                   </DropdownMenuItem>
                  ))}
                </DropdownMenuContent>
-open_in_new      </DropdownMenu>
+                 </DropdownMenu>
 
             {/* Mobile Menu Button */}
             <Button

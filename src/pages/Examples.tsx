@@ -76,7 +76,7 @@ const Examples = () => {
       </div>
 
       <section id="code-examples-page" className="py-20 px-6">
-        <div className="max-w-full mx-auto">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-tech-cyan to-tech-green bg-clip-text text-transparent">
               {t('learning.examples.title')}
@@ -93,13 +93,26 @@ const Examples = () => {
                 className="animate-fade-in"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                {/* ✅ Agora ficam sempre lado a lado */}
-                <div className="grid grid-cols-2 gap-8 items-start">
-                  <CodeExample {...example} />
-                  <CircuitVisualization
-                    type={index === 0 ? "counter" : "flipflop"}
-                    title={example.title}
-                  />
+                {/* ⬇️ Lado a lado e alturas iguais ⬇️ */}
+                <div className="flex flex-col md:flex-row gap-8 items-stretch">
+                  
+                  {/* Coluna esquerda - código */}
+                  <div className="flex-1 flex flex-col justify-stretch h-full bg-zinc-900/60 border border-zinc-700 rounded-xl p-6 shadow-md">
+                    <div className="flex-1 flex flex-col h-full">
+                      <CodeExample {...example} />
+                    </div>
+                  </div>
+
+                  {/* Coluna direita - simulação */}
+                  <div className="flex-1 flex flex-col justify-stretch h-full bg-zinc-900/60 border border-zinc-700 rounded-xl p-6 shadow-md">
+                    <div className="flex-1 flex flex-col h-full">
+                      <CircuitVisualization
+                        type={index === 0 ? "counter" : "flipflop"}
+                        title={example.title}
+                      />
+                    </div>
+                  </div>
+
                 </div>
               </div>
             ))}
