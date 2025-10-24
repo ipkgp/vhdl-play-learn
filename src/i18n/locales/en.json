@@ -1,0 +1,424 @@
+{
+  "nav": {
+    "home": "Home",
+    "learning": "Learning",
+    "examples": "Examples",
+    "resources": "Resources",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Learn VHDL",
+    "subtitle": "Master the world's most widely used hardware description language",
+    "description": "A complete and interactive course for beginners and professionals who want to learn VHDL in a practical and efficient way",
+    "cta": {
+      "start": "Get Started",
+      "examples": "View Examples"
+    }
+  },
+  "learning": {
+    "intro": {
+      "title": "Introduction to VHDL",
+      "subtitle": "Essential fundamentals"
+    },
+    "fundamentals": {
+      "title": "Fundamental Concepts",
+      "subtitle": "Structures and syntax"
+    },
+    "examples": {
+      "title": "Practical Examples",
+      "subtitle": "Real applied code"
+    },
+    "concepts": {
+      "whatIs": {
+        "title": "What is VHDL?",
+        "description": "VHDL (VHSIC Hardware Description Language) is a hardware description language used to model digital electronic systems."
+      },
+      "history": {
+        "title": "History",
+        "description": "Developed in the 1980s by the U.S. Department of Defense, it is now IEEE 1076 standard."
+      },
+      "features": {
+        "title": "Features",
+        "description": "Strongly typed, supports concurrency, allows simulation and synthesis of digital circuits."
+      },
+      "entities": {
+        "title": "Entities and Architectures",
+        "description": "The entity defines the interface (input/output ports) and the architecture describes the internal behavior of the circuit."
+      },
+      "signals": {
+        "title": "Signals and Variables",
+        "description": "Signals represent physical connections between components, while variables are used for temporary calculations within processes."
+      },
+      "processes": {
+        "title": "Processes and Clock",
+        "description": "Processes are sequential blocks that execute when signals in the sensitivity list change, essential for synchronous logic."
+      },
+      "dataTypes": {
+        "title": "Data Types",
+        "description": "VHDL has native types (std_logic, integer, boolean) and allows creation of custom types to represent states and structures."
+      },
+      "stateMachines": {
+        "title": "State Machines",
+        "description": "FSMs (Finite State Machines) are fundamental for sequential control, implemented with processes and enumerated types."
+      },
+      "hierarchy": {
+        "title": "Hierarchy and Components",
+        "description": "Complex projects are divided into smaller components, creating modular and reusable hierarchy."
+      }
+    }
+  },
+  "basicExercises": {
+    "title": "Basic Exercises",
+    "subtitle": "Practice VHDL fundamentals",
+    "progress": "Progress",
+    "verify": "Verify Code",
+    "next": "Next Exercise",
+    "previous": "Previous",
+    "completed": "Congratulations! You've completed all basic exercises!",
+    "instructions": "Instructions",
+    "hint": "Hint",
+    "truthTable": "Truth Table",
+    "feedback": {
+      "correct": "Correct!",
+      "incorrect": "Incorrect code. Please check again."
+    }
+  },
+  "quiz": {
+    "title": "Interactive Quiz",
+    "subtitle": "Test your VHDL knowledge",
+    "question": "Question",
+    "of": "of",
+    "next": "Next",
+    "previous": "Previous",
+    "finish": "Finish Quiz",
+    "restart": "Restart Quiz",
+    "score": "Score",
+    "explanation": "Explanation"
+  },
+  "resources": {
+    "title": "Resources",
+    "subtitle": "Complementary materials to deepen your knowledge",
+    "documentation": {
+      "title": "Documentation",
+      "items": {
+        "ieee": "IEEE Standard VHDL",
+        "tutorials": "Online Tutorials",
+        "examples": "Code Examples"
+      }
+    },
+    "tools": {
+      "title": "Tools",
+      "items": {
+        "simulators": "VHDL Simulators",
+        "ides": "Recommended IDEs",
+        "fpga": "FPGA Tools"
+      }
+    },
+    "community": {
+      "title": "Community",
+      "items": {
+        "forums": "Forums",
+        "discord": "Discord",
+        "github": "GitHub Projects"
+      }
+    }
+  },
+  "about": {
+    "title": "About the Project",
+    "subtitle": "Our mission is to democratize VHDL education",
+    "mission": {
+      "title": "Mission",
+      "text": "Make VHDL learning accessible, interactive, and efficient for students and professionals worldwide."
+    },
+    "vision": {
+      "title": "Vision",
+      "text": "To be the leading VHDL educational platform, recognized for content quality and learning experience."
+    },
+    "values": {
+      "title": "Values",
+      "items": {
+        "quality": "Content Quality",
+        "accessibility": "Accessibility",
+        "innovation": "Educational Innovation",
+        "community": "Active Community"
+      }
+    }
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Send your questions, suggestions or feedback",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message",
+      "sending": "Sending..."
+    },
+    "success": "Message sent successfully!",
+    "error": "Error sending message. Please try again."
+  },
+  "footer": {
+    "description": "Educational platform to learn VHDL interactively and practically.",
+    "links": {
+      "title": "Useful Links",
+      "documentation": "Documentation",
+      "tutorials": "Tutorials",
+      "examples": "Examples"
+    },
+    "support": {
+      "title": "Support",
+      "faq": "FAQ",
+      "contact": "Contact",
+      "community": "Community"
+    },
+    "rights": "All rights reserved."
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "intermediateExercises": {
+    "title": "Intermediate Exercises",
+    "subtitle": "Arithmetic and sequential circuits to master VHDL.",
+    "progress": "Progress",
+    "verify": "Verify Code",
+    "showHint": "Show Hint",
+    "hideHint": "Hide Hint",
+    "previous": "Previous",
+    "next": "Next",
+    "completed": "Intermediate Level Complete! 🎉",
+    "completedMessage": "You're mastering VHDL! Keep practicing with more advanced projects.",
+    "exerciseOf": "Exercise {{current}} of {{total}}",
+    "instructions": "Instructions",
+    "conceptsApplied": "Applied Concepts",
+    "yourCode": "Your VHDL code:",
+    "placeholder": "Type your VHDL code here...",
+    "feedback": {
+      "error": "The code is not complete yet. Review the instructions and try again."
+    },
+    "exercises": {
+      "halfAdder": {
+        "title": "Half Adder",
+        "description": "Circuit that adds two bits, generating the sum (S) and carry out (C).",
+        "instructions": [
+          "Create a 'half_adder' entity with inputs 'a' and 'b', outputs 's' (sum) and 'c' (carry)",
+          "The sum is: s <= a xor b;",
+          "The carry is: c <= a and b;"
+        ],
+        "hint": "Use XOR operator for the sum and AND for the carry. Remember: 1+1 = 10 in binary (sum=0, carry=1).",
+        "successMessage": "Excellent! The Half Adder is the basis for more complex adders!",
+        "concepts": ["Binary arithmetic", "XOR operator", "Carry bit"]
+      },
+      "fullAdder": {
+        "title": "Full Adder",
+        "description": "Adds three bits: a, b and carry_in, producing sum and carry_out. Base for multi-bit adders.",
+        "instructions": [
+          "Create a 'full_adder' entity with inputs a, b, carry_in and outputs s, carry_out",
+          "Sum: s <= a xor b xor carry_in;",
+          "Carry out: carry_out <= (a and b) or (carry_in and (a xor b));"
+        ],
+        "hint": "The Full Adder can be built with two Half Adders. The carry_out formula combines multiple conditions with OR.",
+        "successMessage": "Perfect! Full Adders are chained to create 8, 16, 32-bit adders!",
+        "concepts": ["Cascaded adders", "Carry propagation", "Arithmetic circuits"]
+      },
+      "decoder2to4": {
+        "title": "2-to-4 Decoder",
+        "description": "Converts 2 input bits into 4 outputs, where only one output is '1' at a time.",
+        "instructions": [
+          "Create a 'decoder_2to4' entity with 2-bit input (sel) and 4-bit output (y)",
+          "Use a process with case-when to map each input combination",
+          "When sel='00', y='0001'; sel='01', y='0010'; sel='10', y='0100'; sel='11', y='1000'"
+        ],
+        "hint": "Use case sel is ... when '00' => y <= '0001'; ... end case; inside a process.",
+        "successMessage": "Great! Decoders are essential for memory selection and multiplexing!",
+        "concepts": ["Decoding", "Case statement", "One-hot encoding"]
+      },
+      "counter0to3": {
+        "title": "0-3 Counter with Enable",
+        "description": "2-bit counter (0→1→2→3→0) that only counts when enable='1'.",
+        "instructions": [
+          "Create a 'counter_0to3' entity with clock, reset, enable and count output (2 bits)",
+          "Use process with rising_edge(clock) for synchronous logic",
+          "If reset='1': count <= '00'",
+          "If enable='1': increment count (use numeric_std for conversion)"
+        ],
+        "hint": "Use library IEEE.NUMERIC_STD.ALL; and convert: count <= std_logic_vector(unsigned(count) + 1);",
+        "successMessage": "Excellent! You've mastered sequential logic with enable!",
+        "concepts": ["Sequential logic", "Clock edge", "Enable signal", "Numeric conversions"]
+      }
+    }
+  },
+  "tutorial": {
+    "title": "Step-by-Step Tutorial: BCD to 7-Segment Decoder",
+    "subtitle": "Learn to develop VHDL code step by step with real-time validation",
+    "progress": "Progress",
+    "stepsCompleted": "steps completed",
+    "verify": "Verify Code",
+    "showHint": "Show Hint",
+    "hideHint": "Hide Hint",
+    "previous": "Previous",
+    "next": "Next",
+    "finish": "Finish",
+    "allCompleted": "Congratulations! You've completed all tutorial steps!",
+    "placeholder": "Type your VHDL code here...",
+    "feedback": {
+      "error": "❌ Oops! The code isn't correct yet. Review the instructions and try again. Click 'Show Hint' if you need help."
+    },
+    "steps": [
+      {
+        "title": "Step 1: Entity Declaration",
+        "description": "Let's start by declaring the entity for our BCD to 7-segment display decoder.",
+        "instruction": "Complete the code by declaring the input and output ports. The input should be a 4-bit vector (BCD) and the output should be a 7-bit vector (segments).",
+        "hint": "Use 'std_logic_vector' for vectors. Format: (3 downto 0) for 4 bits and (6 downto 0) for 7 bits.",
+        "successMessage": "✅ Perfect! You correctly declared the entity with input and output ports."
+      },
+      {
+        "title": "Step 2: Starting the Architecture",
+        "description": "Now let's create the architecture that implements the decoder logic.",
+        "instruction": "Declare the 'behavioral' architecture and start the process sensitive to the 'entrada' signal.",
+        "hint": "Use 'architecture behavioral of bcd_7seg is' and then 'process(entrada)'.",
+        "successMessage": "✅ Excellent! The architecture and process structure is correct."
+      },
+      {
+        "title": "Step 3: Case Structure",
+        "description": "Inside the process, we'll use a 'case' structure to map each BCD input to corresponding segments.",
+        "instruction": "Add the 'case' structure that analyzes the 'entrada' value and complete the first 3 numbers (0, 1 and 2).",
+        "hint": "Format: case entrada is when \"0000\" => segmentos <= \"1111110\"; -- For number 0",
+        "successMessage": "✅ Very good! You correctly mapped numbers 0, 1 and 2. Keep it up!"
+      },
+      {
+        "title": "Step 4: Completing Numbers 3-6",
+        "description": "Let's add more numbers to our decoder.",
+        "instruction": "Complete the mapping for numbers 3, 4, 5 and 6.",
+        "hint": "3='1111001', 4='0110011', 5='1011011', 6='1011111'",
+        "successMessage": "✅ Fantastic! Only the last numbers left."
+      },
+      {
+        "title": "Step 5: Finishing with 7, 8 and 9",
+        "description": "Final step! Let's complete the decoder with the remaining numbers.",
+        "instruction": "Complete the mapping for numbers 7, 8 and 9.",
+        "hint": "7='1110000', 8='1111111', 9='1111011'",
+        "successMessage": "🎉 Congratulations! You completed the BCD to 7-segment display decoder!"
+      }
+    ]
+  },
+  "lab": {
+    "title": "Interactive VHDL Lab",
+    "subtitle": "Learn to program a BCD to 7-segment display decoder",
+    "editor": "VHDL Code Editor",
+    "display": "7-Segment Display",
+    "simulate": "Simulate Code",
+    "input": "Decimal Input",
+    "binary": "Binary",
+    "currentPattern": "Current Pattern",
+    "segments": "Segment Mapping",
+    "placeholder": "Type your VHDL code here...",
+    "instructions": "Instructions",
+    "instructionsList": [
+      "Complete the VHDL code above with segment patterns",
+      "Each pattern is a 7-bit string: \"abcdefg\"",
+      "1 = segment on, 0 = segment off",
+      "Click \"Simulate Code\" to test your implementation",
+      "Use the control on the right to see numbers on the display"
+    ],
+    "segmentLabels": {
+      "a": "a = top segment",
+      "b": "b = top right",
+      "c": "c = bottom right",
+      "d": "d = bottom segment",
+      "e": "e = bottom left",
+      "f": "f = top left",
+      "g": "g = center segment"
+    },
+    "feedback": {
+      "success": "✅ Code analyzed successfully! Mapping extracted. Test different numbers on the input control.",
+      "error": "Error parsing VHDL code. Check your mapping syntax.",
+      "incomplete": "Error: Incomplete mapping. Make sure to define patterns for all numbers 0 to 9."
+    }
+  },
+  "glossary": {
+    "title": "Interactive VHDL Glossary",
+    "subtitle": "Complete dictionary of VHDL terms, operators and concepts with practical examples.",
+    "search": "Search term or concept...",
+    "termsFound": "term(s) found",
+    "noResults": "No terms found. Try another search term.",
+    "example": "Example",
+    "categoryCount": "terms",
+    "categories": {
+      "basic": "Basic Concepts",
+      "advanced": "Advanced Concepts",
+      "operator": "Operators",
+      "type": "Data Types"
+    }
+  },
+  "gamification": {
+    "title": "Achievements and Progress",
+    "subtitle": "Track your learning journey and earn badges!",
+    "overallProgress": "Your Overall Progress",
+    "continueMessage": "Keep learning to unlock more achievements!",
+    "totalPoints": "of {{total}} total points",
+    "totalBadges": "of {{total}} badges",
+    "completed": "completed",
+    "earnedBadges": "Earned Badges ({{count}})",
+    "nextAchievements": "Next Achievements ({{count}})",
+    "unlocked": "Unlocked!",
+    "howToUnlock": "How to unlock:",
+    "motivational": {
+      "start": {
+        "title": "Start your journey!",
+        "message": "Complete your first exercise to earn your first badge!"
+      },
+      "progress": {
+        "title": "Great progress!",
+        "message": "Keep it up to unlock all {{total}} badges!"
+      },
+      "master": {
+        "title": "VHDL Master! 🎉",
+        "message": "Congratulations! You've earned ALL available badges!"
+      }
+    },
+    "badges": {
+      "firstSteps": {
+        "title": "First Steps",
+        "description": "Complete your first basic exercise",
+        "requirement": "Complete 1 basic exercise"
+      },
+      "logicMaster": {
+        "title": "Logic Master",
+        "description": "Master all basic logic gates",
+        "requirement": "Complete all logic gate exercises"
+      },
+      "quizChampion": {
+        "title": "Quiz Champion",
+        "description": "Score 90% or more on the quiz",
+        "requirement": "Score 9/10 on quiz questions"
+      },
+      "arithmeticExpert": {
+        "title": "Arithmetic Expert",
+        "description": "Complete all adder exercises",
+        "requirement": "Complete Half Adder and Full Adder"
+      },
+      "sequentialWizard": {
+        "title": "Sequential Wizard",
+        "description": "Master sequential logic and counters",
+        "requirement": "Complete the counter exercise"
+      },
+      "displayDecoder": {
+        "title": "Display Decoder",
+        "description": "Create the BCD to 7-segment decoder",
+        "requirement": "Complete the 7-segment tutorial"
+      },
+      "knowledgeSeeker": {
+        "title": "Knowledge Seeker",
+        "description": "Consult the glossary 10 times",
+        "requirement": "Explore 10 glossary terms"
+      },
+      "vhdlMaster": {
+        "title": "VHDL Master",
+        "description": "Complete ALL available exercises",
+        "requirement": "100% completion"
+      }
+    }
+  }
+}

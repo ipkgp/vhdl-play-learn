@@ -1,0 +1,389 @@
+{
+  "nav": {
+    "home": "Início",
+    "learning": "Aprendizado",
+    "examples": "Exemplos",
+    "resources": "Recursos",
+    "about": "Sobre",
+    "contact": "Contato"
+  },
+  "hero": {
+    "title": "Aprenda VHDL",
+    "subtitle": "Domine a linguagem de descrição de hardware de forma intuitiva e prática",
+    "description": "Do básico aos conceitos avançados, aprenda VHDL com exemplos reais e explicações claras que tornam o hardware design acessível para todos.",
+    "cta": {
+      "start": "Começar Agora",
+      "examples": "Ver Exemplos"
+    }
+  },
+  "learning": {
+    "intro": {
+      "title": "Introdução ao VHDL",
+      "subtitle": "Comece sua jornada entendendo o que é VHDL, sua origem e principais características"
+    },
+    "fundamentals": {
+      "title": "Conceitos Fundamentais",
+      "subtitle": "Domine os pilares do VHDL através de explicações claras e exemplos práticos"
+    },
+    "examples": {
+      "title": "Exemplos Práticos",
+      "subtitle": "Código VHDL real que você pode executar e modificar"
+    }
+  },
+  "basicExercises": {
+    "title": "Exercícios Básicos",
+    "subtitle": "Pratique os fundamentos de VHDL",
+    "progress": "Progresso",
+    "verify": "Verificar Código",
+    "next": "Próximo Exercício",
+    "previous": "Anterior",
+    "completed": "Parabéns! Você completou todos os exercícios básicos!",
+    "instructions": "Instruções",
+    "hint": "Dica",
+    "truthTable": "Tabela Verdade",
+    "feedback": {
+      "correct": "Correto!",
+      "incorrect": "Código incorreto. Verifique novamente."
+    }
+  },
+  "quiz": {
+    "title": "Quiz Interativo",
+    "subtitle": "Teste seus conhecimentos em VHDL",
+    "question": "Questão",
+    "of": "de",
+    "next": "Próxima",
+    "previous": "Anterior",
+    "finish": "Finalizar Quiz",
+    "restart": "Reiniciar Quiz",
+    "score": "Pontuação",
+    "explanation": "Explicação"
+  },
+  "intermediateExercises": {
+    "title": "Exercícios Intermediários",
+    "subtitle": "Desafios mais avançados de VHDL"
+  },
+  "tutorial": {
+    "title": "Tutorial Passo a Passo",
+    "subtitle": "Display de 7 Segmentos"
+  },
+  "lab": {
+    "title": "Laboratório Interativo",
+    "subtitle": "Experimente e teste seu código"
+  },
+  "glossary": {
+    "title": "Glossário Interativo",
+    "subtitle": "Termos e conceitos essenciais de VHDL",
+    "search": "Buscar termo...",
+    "categories": {
+      "all": "Todos",
+      "basic": "Básico",
+      "signals": "Sinais",
+      "types": "Tipos",
+      "structures": "Estruturas"
+    },
+    "example": "Exemplo"
+  },
+  "gamification": {
+    "title": "Suas Conquistas",
+    "subtitle": "Acompanhe seu progresso e desbloqueie badges",
+    "progress": "Progresso Geral",
+    "earned": "Conquistas Desbloqueadas",
+    "locked": "Conquistas Bloqueadas",
+    "points": "pontos"
+  },
+  "resources": {
+    "title": "Recursos",
+    "subtitle": "Materiais complementares para aprofundar seus conhecimentos",
+    "documentation": {
+      "title": "Documentação",
+      "items": {
+        "ieee": "IEEE Standard VHDL",
+        "tutorials": "Tutoriais Online",
+        "examples": "Exemplos de Código"
+      }
+    },
+    "tools": {
+      "title": "Ferramentas",
+      "items": {
+        "simulators": "Simuladores VHDL",
+        "ides": "IDEs Recomendadas",
+        "fpga": "Ferramentas FPGA"
+      }
+    },
+    "community": {
+      "title": "Comunidade",
+      "items": {
+        "forums": "Fóruns",
+        "discord": "Discord",
+        "github": "Projetos GitHub"
+      }
+    }
+  },
+  "about": {
+    "title": "Sobre o Projeto",
+    "subtitle": "Nossa missão é democratizar o ensino de VHDL",
+    "mission": {
+      "title": "Missão",
+      "text": "Tornar o aprendizado de VHDL acessível, interativo e eficiente para estudantes e profissionais em todo o mundo."
+    },
+    "vision": {
+      "title": "Visão",
+      "text": "Ser a principal plataforma educacional de VHDL, reconhecida pela qualidade do conteúdo e pela experiência de aprendizado."
+    },
+    "values": {
+      "title": "Valores",
+      "items": {
+        "quality": "Qualidade do Conteúdo",
+        "accessibility": "Acessibilidade",
+        "innovation": "Inovação Educacional",
+        "community": "Comunidade Ativa"
+      }
+    }
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "subtitle": "Envie suas dúvidas, sugestões ou feedback",
+    "form": {
+      "name": "Nome",
+      "email": "E-mail",
+      "message": "Mensagem",
+      "submit": "Enviar Mensagem",
+      "sending": "Enviando..."
+    },
+    "success": "Mensagem enviada com sucesso!",
+    "error": "Erro ao enviar mensagem. Tente novamente."
+  },
+  "footer": {
+    "description": "Plataforma educacional para aprender VHDL de forma interativa e prática.",
+    "links": {
+      "title": "Links Úteis",
+      "documentation": "Documentação",
+      "tutorials": "Tutoriais",
+      "examples": "Exemplos"
+    },
+    "support": {
+      "title": "Suporte",
+      "faq": "FAQ",
+      "contact": "Contato",
+      "community": "Comunidade"
+    },
+    "rights": "Todos os direitos reservados."
+  },
+  "basicExercises": {
+    "title": "Exercícios Básicos de VHDL",
+    "subtitle": "Comece do zero! Aprenda os componentes fundamentais da lógica digital.",
+    "progress": "Progresso",
+    "verify": "Verificar Código",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "showHint": "Ver Dica",
+    "hideHint": "Esconder Dica",
+    "completed": "Parabéns! 🎉",
+    "completedMessage": "Você completou todos os exercícios básicos! Agora está pronto para desafios mais avançados.",
+    "instructions": "Instruções",
+    "truthTable": "Tabela Verdade",
+    "inputs": "Entradas",
+    "outputs": "Saída",
+    "yourCode": "Seu código VHDL:",
+    "placeholder": "Digite seu código VHDL aqui...",
+    "exerciseOf": "Exercício {{current}} de {{total}}",
+    "hint": "Dica",
+    "feedback": {
+      "error": "O código ainda não está correto. Revise as instruções e tente novamente."
+    },
+    "exercises": {
+      "andGate": {
+        "title": "Porta AND (E)",
+        "description": "Crie uma porta lógica AND de 2 entradas. A saída só é '1' quando AMBAS as entradas são '1'.",
+        "instructions": [
+          "Crie uma entidade chamada 'porta_and' com 2 entradas (a, b) e 1 saída (y)",
+          "Use o operador 'and' para combinar as entradas: y <= a and b;"
+        ],
+        "hint": "A porta AND usa o operador 'and'. Lembre-se: entity nome is Port(...); end nome; depois architecture...",
+        "successMessage": "Perfeito! Você criou sua primeira porta lógica em VHDL!",
+        "initialCode": "-- Complete o código da porta AND\nentity porta_and is\n  Port (\n    -- Declare as entradas a, b\n    -- Declare a saída y\n  );\nend porta_and;\n\narchitecture behavioral of porta_and is\nbegin\n  -- Implemente: y <= a and b;\nend behavioral;"
+      },
+      "orGate": {
+        "title": "Porta OR (OU)",
+        "description": "Crie uma porta lógica OR de 2 entradas. A saída é '1' quando PELO MENOS UMA entrada é '1'.",
+        "instructions": [
+          "Crie uma entidade chamada 'porta_or' com 2 entradas (a, b) e 1 saída (y)",
+          "Use o operador 'or' para combinar as entradas"
+        ],
+        "hint": "Similar à porta AND, mas use o operador 'or' ao invés de 'and'.",
+        "successMessage": "Excelente! A porta OR está funcionando corretamente!",
+        "initialCode": "-- Complete o código da porta OR\nentity porta_or is\n  Port (\n    a : in std_logic;\n    b : in std_logic;\n    -- Declare a saída y\n  );\nend porta_or;\n\narchitecture behavioral of porta_or is\nbegin\n  -- Implemente usando o operador 'or'\nend behavioral;"
+      },
+      "notGate": {
+        "title": "Porta NOT (Inversor)",
+        "description": "Crie uma porta lógica NOT. A saída é sempre o INVERSO da entrada.",
+        "instructions": [
+          "Crie uma entidade chamada 'porta_not' com 1 entrada (a) e 1 saída (y)",
+          "Use o operador 'not' para inverter a entrada"
+        ],
+        "hint": "O operador NOT é usado assim: y <= not a;",
+        "successMessage": "Ótimo trabalho! Você dominou o operador NOT!",
+        "initialCode": "-- Complete o código da porta NOT\nentity porta_not is\n  Port (\n    -- Declare a entrada e a saída\n  );\nend porta_not;\n\narchitecture behavioral of porta_not is\nbegin\n  -- Inverta a entrada\nend behavioral;"
+      },
+      "mux": {
+        "title": "Multiplexador 2:1",
+        "description": "Crie um multiplexador que seleciona entre 2 entradas baseado em um sinal de seleção.",
+        "instructions": [
+          "Crie uma entidade com 2 entradas de dados (a, b), 1 seletor (sel) e 1 saída (y)",
+          "Use uma expressão condicional: y <= a when sel='0' else b;",
+          "Quando sel=0, a saída y recebe 'a'. Quando sel=1, y recebe 'b'"
+        ],
+        "hint": "Use a estrutura: saida <= entrada1 when condicao else entrada2;",
+        "successMessage": "Fantástico! Você criou um multiplexador funcional!",
+        "initialCode": "-- Complete o código do multiplexador 2:1\nentity mux_2to1 is\n  Port (\n    a   : in std_logic;\n    b   : in std_logic;\n    sel : in std_logic;\n    y   : out std_logic\n  );\nend mux_2to1;\n\narchitecture behavioral of mux_2to1 is\nbegin\n  -- Implemente a lógica de seleção\n  -- y <= a when sel='0' else b;\nend behavioral;"
+      }
+    }
+  },
+  "quiz": {
+    "title": "Quiz Interativo de VHDL",
+    "subtitle": "Teste seus conhecimentos com feedback imediato!",
+    "progress": "Progresso",
+    "score": "Pontuação",
+    "question": "Questão",
+    "of": "de",
+    "verify": "Verificar Resposta",
+    "next": "Próxima",
+    "previous": "Anterior",
+    "finish": "Ver Resultado",
+    "restart": "Reiniciar Quiz",
+    "completed": "Quiz Concluído! 🎉",
+    "selectAnswer": "Selecione uma resposta",
+    "selectPrompt": "Por favor, escolha uma opção antes de verificar.",
+    "resultMessage": "Você acertou {{percentage}}% das questões!",
+    "difficulty": {
+      "easy": "Fácil",
+      "medium": "Médio",
+      "hard": "Difícil"
+    },
+    "evaluation": {
+      "excellent": "Excelente! Você domina VHDL! 🌟",
+      "veryGood": "Muito bom! Continue praticando! 👍",
+      "good": "Bom começo! Revise os conceitos. 📚",
+      "keepGoing": "Continue estudando! Você vai conseguir! 💪"
+    },
+    "feedback": {
+      "correct": "Correto! 🎉",
+      "incorrect": "Incorreto",
+      "explanation": "Avaliação:"
+    }
+  },
+  "intermediateExercises": {
+    "title": "Exercícios Intermediários",
+    "subtitle": "Circuitos aritméticos e sequenciais para dominar VHDL.",
+    "progress": "Progresso",
+    "verify": "Verificar Código",
+    "showHint": "Ver Dica",
+    "hideHint": "Esconder Dica",
+    "completed": "Nível Intermediário Completo! 🎉",
+    "completedMessage": "Você está dominando VHDL! Continue praticando com projetos mais avançados.",
+    "instructions": "Instruções",
+    "concepts": "Conceitos Aplicados",
+    "yourCode": "Seu código VHDL:",
+    "placeholder": "Digite seu código VHDL aqui...",
+    "exerciseOf": "Exercício {{current}} de {{total}}",
+    "hint": "Dica",
+    "next": "Próximo",
+    "previous": "Anterior",
+    "feedback": {
+      "error": "O código ainda não está completo. Revise as instruções e tente novamente."
+    }
+  },
+  "tutorial": {
+    "title": "Tutorial Passo a Passo: Decodificador BCD para 7 Segmentos",
+    "subtitle": "Aprenda a desenvolver o código VHDL etapa por etapa com validação em tempo real",
+    "progress": "Progresso",
+    "stepsCompleted": "etapas concluídas",
+    "verify": "Verificar Código",
+    "showHint": "Ver Dica",
+    "hideHint": "Esconder Dica",
+    "previous": "Anterior",
+    "next": "Próximo",
+    "finish": "Finalizar",
+    "allCompleted": "Parabéns! Você completou todas as etapas do tutorial!",
+    "instructions": "Instruções:",
+    "yourCode": "Digite seu código VHDL aqui...",
+    "feedback": {
+      "error": "Ops! O código não está correto ainda. Revise as instruções e tente novamente. Clique em 'Ver Dica' se precisar de ajuda."
+    }
+  },
+  "lab": {
+    "title": "Laboratório Interativo VHDL",
+    "subtitle": "Aprenda a programar um decodificador BCD para display de 7 segmentos",
+    "editor": "Editor de Código VHDL",
+    "display": "Display de 7 Segmentos",
+    "simulate": "Simular Código",
+    "input": "Entrada Decimal",
+    "binary": "Binário",
+    "currentPattern": "Padrão Atual",
+    "segments": "Mapeamento de Segmentos",
+    "instructions": "Instruções:",
+    "instructionsList": [
+      "Complete o código VHDL acima com os padrões de segmentos",
+      "Cada padrão é uma string de 7 bits: \"abcdefg\"",
+      "1 = segmento aceso, 0 = segmento apagado",
+      "Clique em \"Simular Código\" para testar sua implementação",
+      "Use o controle à direita para ver os números no display"
+    ],
+    "segmentLabels": {
+      "a": "a = segmento superior",
+      "b": "b = superior direito",
+      "c": "c = inferior direito",
+      "d": "d = segmento inferior",
+      "e": "e = inferior esquerdo",
+      "f": "f = superior esquerdo",
+      "g": "g = segmento central"
+    },
+    "feedback": {
+      "success": "Código analisado com sucesso! Mapeamento extraído. Teste diferentes números no controle de entrada.",
+      "error": "Erro ao analisar o código VHDL. Verifique a sintaxe do seu mapeamento.",
+      "incomplete": "Erro: Mapeamento incompleto. Certifique-se de definir os padrões para todos os números de 0 a 9."
+    }
+  },
+  "glossary": {
+    "title": "Glossário Interativo VHDL",
+    "subtitle": "Dicionário completo de termos, operadores e conceitos de VHDL com exemplos práticos.",
+    "search": "Buscar termo ou conceito...",
+    "termsFound": "termo(s) encontrado(s)",
+    "noResults": "Nenhum termo encontrado. Tente outro termo de busca.",
+    "example": "Exemplo:",
+    "categories": {
+      "basic": "Conceitos Básicos",
+      "advanced": "Conceitos Avançados",
+      "operator": "Operadores",
+      "type": "Tipos de Dados"
+    },
+    "categoryTerms": "termos"
+  },
+  "gamification": {
+    "title": "Conquistas e Progresso",
+    "subtitle": "Acompanhe sua jornada de aprendizado e conquiste badges!",
+    "overallProgress": "Seu Progresso Geral",
+    "continueMessage": "Continue aprendendo para desbloquear mais conquistas!",
+    "totalPoints": "de {{total}} pontos totais",
+    "totalBadges": "de {{total}} badges",
+    "completed": "concluído",
+    "earned": "Badges Conquistadas",
+    "nextAchievements": "Próximas Conquistas",
+    "unlocked": "Conquistada!",
+    "howToUnlock": "Como desbloquear:",
+    "motivational": {
+      "start": {
+        "title": "Comece sua jornada!",
+        "message": "Complete seu primeiro exercício para ganhar sua primeira badge!"
+      },
+      "progress": {
+        "title": "Ótimo progresso!",
+        "message": "Continue assim para desbloquear todas as {{total}} badges!"
+      },
+      "master": {
+        "title": "Mestre VHDL! 🎉",
+        "message": "Parabéns! Você conquistou TODAS as badges disponíveis!"
+      }
+    }
+  }
+}
