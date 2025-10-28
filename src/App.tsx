@@ -14,7 +14,7 @@ import Resources from "./pages/Resources";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 
-// 1. ADICIONAR IMPORTS DO HEADER E FOOTER
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -27,16 +27,16 @@ const App = () => (
         <Toaster />
         <Sonner />
 
-        {/* 2. ADICIONAR HEADER AQUI (fora das rotas) */}
+        
         <Header />
 
-        {/* 3. Definir a área principal onde as páginas mudam */}
+        
         <main>
-          {/* O <BrowserRouter> FOI REMOVIDO DAQUI */}
+          
           <Routes>
             <Route path="/" element={<Index />} />
             
-            {/* 4. CORRIGIR OS CAMINHOS (PATHS) */}
+            
             <Route path="/aprendizado" element={<Learning />} />
             <Route path="/exemplos" element={<Examples />} />
             <Route path="/recursos" element={<Resources />} />
@@ -47,7 +47,7 @@ const App = () => (
           </Routes>
         </main>
         
-        {/* 5. ADICIONAR FOOTER AQUI (fora das rotas) */}
+        
         <Footer />
 
      </TooltipProvider> 
