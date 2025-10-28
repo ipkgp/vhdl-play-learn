@@ -2,6 +2,11 @@ import { useTranslation } from "react-i18next";
 import CodeExample from "../components/CodeExample";
 import CircuitVisualization from "../components/CircuitVisualization";
 
+import VHDLBasicExercises from "../components/VHDLBasicExercises";
+import VHDLQuizSystem from "../components/VHDLQuizSystem";
+import VHDLSevenSegmentLab from "../components/VHDLSevenSegmentLab";
+import VHDLStepByStepTutorial from "../components/VHDLStepByStepTutorial"; 
+
 const codeExamples = [
   {
     title: "Contador Simples",
@@ -66,23 +71,17 @@ const Examples = () => {
 
   return (
     <>
-      <div className="pt-24 pb-12 px-6 text-center bg-muted/20">
-        <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-tech-cyan to-tech-green bg-clip-text text-transparent">
-          {t('nav.examples')}
-        </h1>
-        <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Analise exemplos de código VHDL e veja simulações de circuitos interativos.
-        </p>
-      </div>
+      
 
+      {/* 🔹 Exemplos de código (contador e flip-flop) */}
       <section id="code-examples-page" className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-full mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-tech-cyan to-tech-green bg-clip-text text-transparent">
-              {t('learning.examples.title')}
+              {t("learning.examples.title")}
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              {t('learning.examples.subtitle')}
+              {t("learning.examples.subtitle")}
             </p>
           </div>
 
@@ -90,33 +89,54 @@ const Examples = () => {
             {codeExamples.map((example, index) => (
               <div
                 key={index}
-                className="animate-fade-in"
+                className="animate-fade-in mb-16"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                {/* ⬇️ Lado a lado e alturas iguais ⬇️ */}
-                <div className="flex flex-col md:flex-row gap-8 items-stretch">
-                  
-                  {/* Coluna esquerda - código */}
-                  <div className="flex-1 flex flex-col justify-stretch h-full bg-zinc-900/60 border border-zinc-700 rounded-xl p-6 shadow-md">
-                    <div className="flex-1 flex flex-col h-full">
-                      <CodeExample {...example} />
-                    </div>
-                  </div>
-
-                  {/* Coluna direita - simulação */}
-                  <div className="flex-1 flex flex-col justify-stretch h-full bg-zinc-900/60 border border-zinc-700 rounded-xl p-6 shadow-md">
-                    <div className="flex-1 flex flex-col h-full">
-                      <CircuitVisualization
-                        type={index === 0 ? "counter" : "flipflop"}
-                        title={example.title}
-                      />
-                    </div>
-                  </div>
-
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                  <CodeExample {...example} />
+                  <CircuitVisualization
+                    type={index === 0 ? "counter" : "flipflop"}
+                    title={example.title}
+                  />
                 </div>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* 🔹 Seções adicionais */}
+      <section id="other-labs" className="py-20 px-6 bg-muted/30">
+        <div className="container mx-auto space-y-24">
+
+          {/* ✅ Tutorial passo a passo antes da tela final */}
+          <section id="lab-7seg-tutorial">
+            <VHDLStepByStepTutorial />
+          </section>
+
+          {/* ✅ Laboratório com display 7 segmentos */}
+          <section id="lab-7-segmentos">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-tech-blue to-tech-purple bg-clip-text text-transparent">
+                Laboratório: Display 7 Segmentos
+              </h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                Veja como um decodificador BCD para 7 segmentos funciona em tempo real.
+              </p>
+            </div>
+            <VHDLSevenSegmentLab />
+          </section>
+
+          {/* Exercícios básicos */}
+          <section id="exercicios-basicos">
+            <VHDLBasicExercises />
+          </section>
+
+          {/* Quiz */}
+          <section id="quiz">
+            <VHDLQuizSystem />
+          </section>
+
         </div>
       </section>
     </>

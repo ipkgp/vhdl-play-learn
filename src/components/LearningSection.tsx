@@ -160,28 +160,17 @@ const LearningSection = () => {
     {
 
       title: "Contador Simples",
-
       description: "Um contador binário de 4 bits com reset assíncrono",
-
       code: `library IEEE;
 
 use IEEE.STD_LOGIC_1164.ALL;
-
 use IEEE.NUMERIC_STD.ALL;
 
-
-
 entity contador is
-
     Port ( clk : in STD_LOGIC;
-
            reset : in STD_LOGIC;
-
            count : out STD_LOGIC_VECTOR(3 downto 0));
-
 end contador;
-
-
 
 architecture Behavioral of contador is
 
@@ -190,35 +179,23 @@ architecture Behavioral of contador is
 begin
 
     process(clk, reset)
-
     begin
-
         if reset = '1' then
-
             counter <= "0000";
-
         elsif rising_edge(clk) then
-
             counter <= counter + 1;
-
         end if;
-
-    end process;
-
-   
+    end process;   
 
     count <= std_logic_vector(counter);
 
 end Behavioral;`
-
     },
 
     {
 
       title: "Flip-Flop D com Enable",
-
       description: "Implementação de um flip-flop tipo D com sinal de enable",
-
       code: `library IEEE;
 
 use IEEE.STD_LOGIC_1164.ALL;
@@ -315,7 +292,7 @@ end Behavioral;`
 
 
 
-        {/* Advanced Concepts Section */}
+        
 
         <div className="text-center mb-16">
 
@@ -349,10 +326,6 @@ end Behavioral;`
 
         </div>
 
-
-
-        {/* Code Examples Section */}
-
         <div id="code-examples" className="text-center mb-16">
 
           <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-tech-cyan to-tech-green bg-clip-text text-transparent">
@@ -368,8 +341,6 @@ end Behavioral;`
           </p>
 
         </div>
-
-
 
         <div className="space-y-16">
 
