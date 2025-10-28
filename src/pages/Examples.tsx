@@ -70,10 +70,7 @@ const Examples = () => {
   const { t } = useTranslation();
 
   return (
-    <>
-      
-
-      {/* 🔹 Exemplos de código (contador e flip-flop) */}
+    <>    
       <section id="code-examples-page" className="py-20 px-6">
         <div className="max-w-full mx-auto">
           <div className="text-center mb-16">
@@ -105,16 +102,16 @@ const Examples = () => {
         </div>
       </section>
 
-      {/* 🔹 Seções adicionais */}
+      
       <section id="other-labs" className="py-20 px-6 bg-muted/30">
         <div className="container mx-auto space-y-24">
 
-          {/* ✅ Tutorial passo a passo antes da tela final */}
+          
           <section id="lab-7seg-tutorial">
             <VHDLStepByStepTutorial />
           </section>
 
-          {/* ✅ Laboratório com display 7 segmentos */}
+          
           <section id="lab-7-segmentos">
             <div className="text-center mb-12">
               <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-tech-blue to-tech-purple bg-clip-text text-transparent">
@@ -127,12 +124,12 @@ const Examples = () => {
             <VHDLSevenSegmentLab />
           </section>
 
-          {/* Exercícios básicos */}
+          
           <section id="exercicios-basicos">
             <VHDLBasicExercises />
           </section>
 
-          {/* Quiz */}
+          
           <section id="quiz">
             <VHDLQuizSystem />
           </section>

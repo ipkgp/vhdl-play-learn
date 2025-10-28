@@ -2,10 +2,10 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Routes, Route } from "react-router-dom"; // <-- BrowserRouter foi removido daqui
+import { Routes, Route } from "react-router-dom"; 
 import { ThemeProvider } from "next-themes";
 
-// Importar páginas
+
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Learning from "./pages/Learning";
