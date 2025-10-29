@@ -57,7 +57,7 @@ const Index = () => {
       <About />
       <Contact />
       
-      <Footer />
+      
       <Toaster />
     </div>
   );

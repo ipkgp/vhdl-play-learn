@@ -18,7 +18,7 @@ const About = () => {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
-          {/* Mission */}
+          
           <Card className="hover:shadow-lg transition-all duration-300 animate-fade-in">
             <CardHeader>
               <div className="flex items-center gap-3">
@@ -33,7 +33,7 @@ const About = () => {
             </CardContent>
           </Card>
 
-          {/* Vision */}
+          
           <Card className="hover:shadow-lg transition-all duration-300 animate-fade-in" style={{ animationDelay: "100ms" }}>
             <CardHeader>
               <div className="flex items-center gap-3">
@@ -49,7 +49,7 @@ const About = () => {
           </Card>
         </div>
 
-        {/* Values */}
+        
         <Card className="animate-fade-in" style={{ animationDelay: "200ms" }}>
           <CardHeader>
             <div className="flex items-center gap-3">

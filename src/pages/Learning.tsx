@@ -130,7 +130,7 @@ const Learning = () => {
             ))}
           </div>
 
-          {/* A secção "Code Examples" NÃO foi copiada para aqui */}
+          
 
         </div>
       </section>
