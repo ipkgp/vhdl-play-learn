@@ -16,34 +16,57 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold mb-4">Recursos</h4>
             <ul className="space-y-2 text-muted-foreground">
-              <li><a href="#" className="hover:text-tech-purple transition-colors">Tutoriais</a></li>
-              <li><a href="#" className="hover:text-tech-purple transition-colors">Exercícios</a></li>
+              <li><a href="/aprendizado" className="hover:text-tech-purple transition-colors">Tutoriais</a></li>
+              <li><a href="/exemplos" className="hover:text-tech-purple transition-colors">Exercícios</a></li>
               <li><a href="#" className="hover:text-tech-purple transition-colors">Projetos</a></li>
-              <li><a href="#" className="hover:text-tech-purple transition-colors">Documentação</a></li>
+              <li><a href="/recursos" className="hover:text-tech-purple transition-colors">Documentação</a></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-4">Comunidade</h4>
-            <div className="flex flex-col gap-2">
-              <Button variant="ghost" className="justify-start p-0 h-auto text-muted-foreground hover:text-tech-purple">
+            <a 
+              href="https://github.com/ipkgp/vhdl-play-learn.git" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <Button variant="ghost" 
+                      className="justify-start p-0 h-auto text-muted-foreground hover:text-tech-purple">
                 <Github className="w-4 h-4 mr-2" />
                 GitHub
               </Button>
-              <Button variant="ghost" className="justify-start p-0 h-auto text-muted-foreground hover:text-tech-blue">
+            </a>
+            <a 
+              href="/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <Button variant="ghost" 
+                      className="justify-start p-0 h-auto text-muted-foreground hover:text-tech-blue">
                 <BookOpen className="w-4 h-4 mr-2" />
                 Documentação
               </Button>
-              <Button variant="ghost" className="justify-start p-0 h-auto text-muted-foreground hover:text-tech-cyan">
+            </a>
+            
+            {/* Botão Exemplos */}
+            <a 
+              href="/exemplos" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <Button variant="ghost" 
+                      className="justify-start p-0 h-auto text-muted-foreground hover:text-tech-cyan">
                 <Code2 className="w-4 h-4 mr-2" />
                 Exemplos
               </Button>
-            </div>
+            </a>
           </div>
         </div>
         
         <div className="border-t border-border/50 mt-8 pt-8 text-center text-muted-foreground">
-          <p>&copy; 2024 VHDL Academy. Desenvolvido para ensinar VHDL de forma acessível.</p>
+          <p>&copy; 2025 VHDL Academy. Desenvolvido para ensinar VHDL de forma acessível.</p>
         </div>
       </div>
     </footer>

@@ -16,6 +16,10 @@
       "examples": "Ver Exemplos"
     }
   },
+  "theme": {
+    "light": "Claro",
+    "dark": "Escuro"
+  },
   "learning": {
     "intro": {
       "title": "Introdução ao VHDL",

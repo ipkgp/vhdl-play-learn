@@ -11,9 +11,9 @@ const Resources = () => {
       title: t("resources.documentation.title"),
       color: "text-tech-blue",
       items: [
-        { name: t("resources.documentation.items.ieee"), url: "#" },
-        { name: t("resources.documentation.items.tutorials"), url: "#" },
-        { name: t("resources.documentation.items.examples"), url: "#" },
+        { name: t("resources.documentation.items.ieee"), url: "https://edg.uchicago.edu/~tang/VHDLref.pdf" },
+        { name: t("resources.documentation.items.tutorials"), url: "https://www2.pcs.usp.br/~labdig/material/VHDL-Quartus-Prime-16.1-v1.pdf" },
+        { name: t("resources.documentation.items.examples"), url: "https://nandland.com/introduction-to-vhdl-for-beginners-with-code-examples/" },
       ],
     },
     {
@@ -21,9 +21,9 @@ const Resources = () => {
       title: t("resources.tools.title"),
       color: "text-tech-purple",
       items: [
-        { name: t("resources.tools.items.simulators"), url: "#" },
-        { name: t("resources.tools.items.ides"), url: "#" },
-        { name: t("resources.tools.items.fpga"), url: "#" },
+        { name: t("resources.tools.items.simulators"), url: "https://www.edaplayground.com/x/QDJp" },
+        { name: t("resources.tools.items.ides"), url: "https://www.gnu.org/software/emacs/manual/html_mono/vhdl-mode.html" },
+        { name: t("resources.tools.items.fpga"), url: "https://labsland.com/pt_BR/labs/fpga-llstd1" },
       ],
     },
     {
@@ -31,9 +31,9 @@ const Resources = () => {
       title: t("resources.community.title"),
       color: "text-tech-cyan",
       items: [
-        { name: t("resources.community.items.forums"), url: "#" },
+        { name: t("resources.community.items.forums"), url: "https://www.edaboard.com/forums/vhdl.104/" },
         { name: t("resources.community.items.discord"), url: "#" },
-        { name: t("resources.community.items.github"), url: "#" },
+        { name: t("resources.community.items.github"), url: "https://github.com/ipkgp/vhdl-play-learn.git" },
       ],
     },
   ];

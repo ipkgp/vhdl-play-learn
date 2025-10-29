@@ -128,7 +128,6 @@ const Header = () => {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
              {isMobileMenuOpen ? <X /> : <Menu />}
-label: t("nav.home")
            </Button>
          </div>
        </div>
@@ -148,7 +147,7 @@ label: t("nav.home")
                  }`}
                >
                {item.label}
-section         </Link>
+         </Link>
             ))}
           </nav>
        )}
