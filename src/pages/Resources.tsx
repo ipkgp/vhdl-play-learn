@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Book, Wrench, Users, ExternalLink } from "lucide-react";
-
+import VHDLGlossary from "@/components/VHDLGlossary";
 const Resources = () => {
   const { t } = useTranslation();
 
@@ -38,8 +38,8 @@ const Resources = () => {
     },
   ];
 
-  return (
-    <section id="resources" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20">
+  return (        
+      <section id="resources" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-12 animate-fade-in">
           <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-tech-blue to-tech-purple bg-clip-text text-transparent">
@@ -49,6 +49,9 @@ const Resources = () => {
             {t("resources.subtitle")}
           </p>
         </div>
+        <section id="glossary" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20 scroll-mt-16">
+        <VHDLGlossary />
+      </section>
 
         <div className="grid md:grid-cols-3 gap-6">
           {resourceCategories.map((category, index) => (
