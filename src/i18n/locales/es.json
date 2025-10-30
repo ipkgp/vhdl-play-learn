@@ -10,16 +10,16 @@
   "hero": {
     "title": "Aprende VHDL",
     "subtitle": "Domina el lenguaje de descripción de hardware de forma intuitiva y práctica",
-    "description": "Desde lo básico hasta conceptos avanzados, aprende VHDL con ejemplos reales y explicaciones claras que hacen el diseño de hardware accesible para todos.",
+    "description": "Desde lo básico hasta los conceptos avanzados, aprende VHDL con ejemplos reales y explicaciones claras que hacen que el diseño de hardware sea accesible para todos.",
     "cta": {
-      "start": "Comenzar Ahora",
+      "start": "Empezar Ahora",
       "examples": "Ver Ejemplos"
     }
   },
   "learning": {
     "intro": {
       "title": "Introducción a VHDL",
-      "subtitle": "Comienza tu viaje entendiendo qué es VHDL, su origen y características principales"
+      "subtitle": "Comienza tu viaje entendiendo qué es VHDL, su origen y principales características"
     },
     "fundamentals": {
       "title": "Conceptos Fundamentales",
@@ -28,117 +28,148 @@
     "examples": {
       "title": "Ejemplos Prácticos",
       "subtitle": "Código VHDL real que puedes ejecutar y modificar"
+    },
+    "concepts": {
+      "whatIs": {
+        "title": "¿Qué es VHDL?",
+        "description": "VHDL (VHSIC Hardware Description Language) es un lenguaje de descripción de hardware utilizado para modelar sistemas electrónicos digitales."
+      },
+      "history": {
+        "title": "Historia",
+        "description": "Desarrollado en los años 80 por el Departamento de Defensa de EE. UU., ahora es el estándar IEEE 1076."
+      },
+      "features": {
+        "title": "Características",
+        "description": "Fuertemente tipado, soporta concurrencia, permite simulación y síntesis de circuitos digitales."
+      },
+      "entities": {
+        "title": "Entidades y Arquitecturas",
+        "description": "La entidad define la interfaz (puertos de entrada/salida) y la arquitectura describe el comportamiento interno del circuito."
+      },
+      "signals": {
+        "title": "Señales y Variables",
+        "description": "Las señales representan conexiones físicas entre componentes, mientras que las variables se utilizan para cálculos temporales dentro de procesos."
+      },
+      "processes": {
+        "title": "Procesos y Reloj",
+        "description": "Los procesos son bloques secuenciales que se ejecutan cuando las señales en la lista de sensibilidad cambian, esenciales para la lógica síncrona."
+      },
+      "dataTypes": {
+        "title": "Tipos de Datos",
+        "description": "VHDL posee tipos nativos (std_logic, integer, boolean) y permite la creación de tipos personalizados para representar estados y estructuras."
+      },
+      "stateMachines": {
+        "title": "Máquinas de Estado",
+        "description": "Las FSMs (Finite State Machines) son fundamentales para el control secuencial, implementadas con procesos y tipos enumerados."
+      },
+      "hierarchy": {
+        "title": "Jerarquía y Componentes",
+        "description": "Los proyectos complejos se dividen en componentes más pequeños, creando una jerarquía modular y reutilizable."
+      }
     }
   },
   "basicExercises": {
-    "title": "Ejercicios Básicos",
-    "subtitle": "Practica los fundamentos de VHDL",
+    "title": "Ejercicios Básicos de VHDL",
+    "subtitle": "¡Empieza desde cero! Aprende los componentes fundamentales de la lógica digital.",
     "progress": "Progreso",
     "verify": "Verificar Código",
-    "next": "Siguiente Ejercicio",
+    "next": "Siguiente",
     "previous": "Anterior",
-    "completed": "¡Felicitaciones! ¡Has completado todos los ejercicios básicos!",
+    "showHint": "Ver Pista",
+    "hideHint": "Ocultar Pista",
+    "completed": "¡Felicidades! 🎉",
+    "completedMessage": "¡Has completado todos los ejercicios básicos! Ahora estás listo para desafíos más avanzados.",
     "instructions": "Instrucciones",
-    "hint": "Pista",
     "truthTable": "Tabla de Verdad",
+    "inputs": "Entradas",
+    "outputs": "Salida",
+    "yourCode": "Tu código VHDL:",
+    "placeholder": "Escribe tu código VHDL aquí...",
+    "exerciseOf": "Ejercicio {{current}} de {{total}}",
+    "hint": "Pista",
     "feedback": {
-      "correct": "¡Correcto!",
-      "incorrect": "Código incorrecto. Verifica nuevamente."
+      "error": "El código aún no es correcto. Revisa las instrucciones e inténtalo de nuevo."
+    },
+    "exercises": {
+      "andGate": {
+        "title": "Puerta AND (Y)",
+        "description": "Crea una puerta lógica AND de 2 entradas. La salida solo es '1' cuando AMBAS entradas son '1'.",
+        "instructions": [
+          "Crea una entidad llamada 'puerta_and' con 2 entradas (a, b) y 1 salida (y)",
+          "Usa el operador 'and' para combinar las entradas: y <= a and b;"
+        ],
+        "hint": "La puerta AND usa el operador 'and'. Recuerda: entity nombre is Port(...); end nombre; después architecture...",
+        "successMessage": "¡Perfecto! ¡Creaste tu primera puerta lógica en VHDL!",
+        "initialCode": "-- Completa el código de la puerta AND\nentity puerta_and is\n  Port (\n    -- Declara las entradas a, b\n    -- Declara la salida y\n  );\nend puerta_and;\n\narchitecture behavioral of puerta_and is\nbegin\n  -- Implementa: y <= a and b;\nend behavioral;"
+      },
+      "orGate": {
+        "title": "Puerta OR (O)",
+        "description": "Crea una puerta lógica OR de 2 entradas. La salida es '1' cuando AL MENOS UNA entrada es '1'.",
+        "instructions": [
+          "Crea una entidad llamada 'puerta_or' con 2 entradas (a, b) y 1 salida (y)",
+          "Usa el operador 'or' para combinar las entradas"
+        ],
+        "hint": "Similar a la puerta AND, pero usa el operador 'or' en lugar de 'and'.",
+        "successMessage": "¡Excelente! ¡La puerta OR está funcionando correctamente!",
+        "initialCode": "-- Completa el código de la puerta OR\nentity puerta_or is\n  Port (\n    a : in std_logic;\n    b : in std_logic;\n    -- Declara la salida y\n  );\nend porta_or;\n\narchitecture behavioral of porta_or is\nbegin\n  -- Implementa usando el operador 'or'\nend behavioral;"
+      },
+      "notGate": {
+        "title": "Puerta NOT (Inversor)",
+        "description": "Crea una puerta lógica NOT. La salida es siempre la INVERSA de la entrada.",
+        "instructions": [
+          "Crea una entidad llamada 'puerta_not' con 1 entrada (a) y 1 salida (y)",
+          "Usa el operador 'not' para invertir la entrada"
+        ],
+        "hint": "El operador NOT se usa así: y <= not a;",
+        "successMessage": "¡Gran trabajo! ¡Has dominado el operador NOT!",
+        "initialCode": "-- Completa el código de la puerta NOT\nentity puerta_not is\n  Port (\n    -- Declara la entrada y la salida\n  );\nend porta_not;\n\narchitecture behavioral of porta_not is\nbegin\n  -- Invierte la entrada\nend behavioral;"
+      },
+      "mux": {
+        "title": "Multiplexor 2:1",
+        "description": "Crea un multiplexor que selecciona entre 2 entradas basado en una señal de selección.",
+        "instructions": [
+          "Crea una entidad con 2 entradas de datos (a, b), 1 selector (sel) y 1 salida (y)",
+          "Usa una expresión condicional: y <= a when sel='0' else b;",
+          "Cuando sel=0, la salida y recibe 'a'. Cuando sel=1, y recibe 'b'"
+        ],
+        "hint": "Usa la estructura: salida <= entrada1 when condicion else entrada2;",
+        "successMessage": "¡Fantástico! ¡Creaste un multiplexor funcional!",
+        "initialCode": "-- Completa el código del multiplexor 2:1\nentity mux_2to1 is\n  Port (\n    a   : in std_logic;\n    b   : in std_logic;\n    sel : in std_logic;\n    y   : out std_logic\n  );\nend mux_2to1;\n\narchitecture behavioral of mux_2to1 is\nbegin\n  -- Implementa la lógica de selección\n  -- y <= a when sel='0' else b;\nend behavioral;"
+      }
     }
   },
   "quiz": {
-    "title": "Quiz Interactivo",
-    "subtitle": "Prueba tus conocimientos en VHDL",
+    "title": "Cuestionario Interactivo de VHDL",
+    "subtitle": "¡Prueba tus conocimientos con feedback inmediato!",
+    "progress": "Progreso",
+    "score": "Puntuación",
     "question": "Pregunta",
     "of": "de",
+    "verify": "Verificar Respuesta",
     "next": "Siguiente",
     "previous": "Anterior",
-    "finish": "Finalizar Quiz",
-    "restart": "Reiniciar Quiz",
-    "score": "Puntuación",
-    "explanation": "Explicación"
-  },
-  "resources": {
-    "title": "Recursos",
-    "subtitle": "Materiales complementarios para profundizar tus conocimientos",
-    "documentation": {
-      "title": "Documentación",
-      "items": {
-        "ieee": "IEEE Standard VHDL",
-        "tutorials": "Tutoriales en Línea",
-        "examples": "Ejemplos de Código"
-      }
+    "finish": "Ver Resultado",
+    "restart": "Reiniciar Cuestionario",
+    "completed": "¡Cuestionario Completado! 🎉",
+    "selectAnswer": "Selecciona una respuesta",
+    "selectPrompt": "Por favor, elige una opción antes de verificar.",
+    "resultMessage": "¡Acertaste el {{percentage}}% de las preguntas!",
+    "difficulty": {
+      "easy": "Fácil",
+      "medium": "Medio",
+      "hard": "Difícil"
     },
-    "tools": {
-      "title": "Herramientas",
-      "items": {
-        "simulators": "Simuladores VHDL",
-        "ides": "IDEs Recomendados",
-        "fpga": "Herramientas FPGA"
-      }
+    "evaluation": {
+      "excellent": "¡Excelente! ¡Dominas VHDL! 🌟",
+      "veryGood": "¡Muy bien! ¡Sigue practicando! 👍",
+      "good": "¡Buen comienzo! Revisa los conceptos. 📚",
+      "keepGoing": "¡Sigue estudiando! ¡Lo conseguirás! 💪"
     },
-    "community": {
-      "title": "Comunidad",
-      "items": {
-        "forums": "Foros",
-        "discord": "Discord",
-        "github": "Proyectos GitHub"
-      }
+    "feedback": {
+      "correct": "¡Correcto! 🎉",
+      "incorrect": "Incorrecto",
+      "explanation": "Evaluación:"
     }
-  },
-  "about": {
-    "title": "Acerca del Proyecto",
-    "subtitle": "Nuestra misión es democratizar la enseñanza de VHDL",
-    "mission": {
-      "title": "Misión",
-      "text": "Hacer que el aprendizaje de VHDL sea accesible, interactivo y eficiente para estudiantes y profesionales en todo el mundo."
-    },
-    "vision": {
-      "title": "Visión",
-      "text": "Ser la principal plataforma educativa de VHDL, reconocida por la calidad del contenido y la experiencia de aprendizaje."
-    },
-    "values": {
-      "title": "Valores",
-      "items": {
-        "quality": "Calidad del Contenido",
-        "accessibility": "Accesibilidad",
-        "innovation": "Innovación Educativa",
-        "community": "Comunidad Activa"
-      }
-    }
-  },
-  "contact": {
-    "title": "Ponte en Contacto",
-    "subtitle": "Envía tus preguntas, sugerencias o comentarios",
-    "form": {
-      "name": "Nombre",
-      "email": "Correo Electrónico",
-      "message": "Mensaje",
-      "submit": "Enviar Mensaje",
-      "sending": "Enviando..."
-    },
-    "success": "¡Mensaje enviado con éxito!",
-    "error": "Error al enviar mensaje. Inténtalo de nuevo."
-  },
-  "footer": {
-    "description": "Plataforma educativa para aprender VHDL de forma interactiva y práctica.",
-    "links": {
-      "title": "Enlaces Útiles",
-      "documentation": "Documentación",
-      "tutorials": "Tutoriales",
-      "examples": "Ejemplos"
-    },
-    "support": {
-      "title": "Soporte",
-      "faq": "FAQ",
-      "contact": "Contacto",
-      "community": "Comunidad"
-    },
-    "rights": "Todos los derechos reservados."
-  },
-  "theme": {
-    "light": "Claro",
-    "dark": "Oscuro"
   },
   "intermediateExercises": {
     "title": "Ejercicios Intermedios",
@@ -147,45 +178,46 @@
     "verify": "Verificar Código",
     "showHint": "Ver Pista",
     "hideHint": "Ocultar Pista",
-    "previous": "Anterior",
-    "next": "Siguiente",
     "completed": "¡Nivel Intermedio Completo! 🎉",
     "completedMessage": "¡Estás dominando VHDL! Continúa practicando con proyectos más avanzados.",
-    "exerciseOf": "Ejercicio {{current}} de {{total}}",
     "instructions": "Instrucciones",
     "conceptsApplied": "Conceptos Aplicados",
     "yourCode": "Tu código VHDL:",
     "placeholder": "Escribe tu código VHDL aquí...",
+    "exerciseOf": "Ejercicio {{current}} de {{total}}",
+    "hint": "Pista",
+    "next": "Siguiente",
+    "previous": "Anterior",
     "feedback": {
-      "error": "El código aún no está completo. Revisa las instrucciones e intenta nuevamente."
+      "error": "El código aún no está completo. Revisa las instrucciones e inténtalo de nuevo."
     },
     "exercises": {
       "halfAdder": {
         "title": "Half Adder (Medio Sumador)",
-        "description": "Circuito que suma dos bits, generando la suma (S) y el acarreo (carry out - C).",
+        "description": "Circuito que suma dos bits, generando la suma (S) y el 'acarreo de salida' (carry out - C).",
         "instructions": [
-          "Crea una entidad 'half_adder' con entradas 'a' y 'b', salidas 's' (suma) y 'c' (carry)",
+          "Crea una entidad 'half_adder' con entradas 'a' y 'b', salidas 's' (suma) y 'c' (acarreo)",
           "La suma es: s <= a xor b;",
-          "El carry es: c <= a and b;"
+          "El acarreo es: c <= a and b;"
         ],
-        "hint": "Usa el operador XOR para la suma y AND para el carry. Recuerda: 1+1 = 10 en binario (suma=0, carry=1).",
-        "successMessage": "¡Excelente! El Half Adder es la base para sumadores más complejos!",
+        "hint": "Usa el operador XOR para la suma y AND para el acarreo. Recuerda: 1+1 = 10 en binario (suma=0, acarreo=1).",
+        "successMessage": "¡Excelente! ¡El Half Adder es la base para sumadores más complejos!",
         "concepts": ["Aritmética binaria", "Operador XOR", "Bit de acarreo"]
       },
       "fullAdder": {
         "title": "Full Adder (Sumador Completo)",
-        "description": "Suma tres bits: a, b y carry_in, produciendo suma y carry_out. Base de los sumadores de múltiples bits.",
+        "description": "Suma tres bits: a, b y carry_in, produciendo suma y carry_out. Base para sumadores de múltiples bits.",
         "instructions": [
           "Crea una entidad 'full_adder' con entradas a, b, carry_in y salidas s, carry_out",
           "Suma: s <= a xor b xor carry_in;",
-          "Carry out: carry_out <= (a and b) or (carry_in and (a xor b));"
+          "Acarreo de salida: carry_out <= (a and b) or (carry_in and (a xor b));"
         ],
-        "hint": "El Full Adder puede construirse con dos Half Adders. La fórmula del carry_out combina múltiples condiciones con OR.",
-        "successMessage": "¡Perfecto! Los Full Adders se encadenan para crear sumadores de 8, 16, 32 bits!",
+        "hint": "El Full Adder se puede construir con dos Half Adders. La fórmula del carry_out combina múltiples condiciones con OR.",
+        "successMessage": "¡Perfecto! ¡Los Full Adders se encadenan para crear sumadores de 8, 16, 32 bits!",
         "concepts": ["Sumadores en cascada", "Propagación de acarreo", "Circuitos aritméticos"]
       },
       "decoder2to4": {
-        "title": "Decodificador 2-a-4",
+        "title": "Decodificador 2 a 4",
         "description": "Convierte 2 bits de entrada en 4 salidas, donde solo una salida es '1' a la vez.",
         "instructions": [
           "Crea una entidad 'decoder_2to4' con entrada de 2 bits (sel) y salida de 4 bits (y)",
@@ -193,81 +225,81 @@
           "Cuando sel='00', y='0001'; sel='01', y='0010'; sel='10', y='0100'; sel='11', y='1000'"
         ],
         "hint": "Usa case sel is ... when '00' => y <= '0001'; ... end case; dentro de un process.",
-        "successMessage": "¡Genial! Los decodificadores son esenciales en la selección de memoria y multiplexación!",
-        "concepts": ["Decodificación", "Sentencia Case", "Codificación One-hot"]
+        "successMessage": "¡Genial! ¡Los decodificadores son esenciales para la selección de memoria y multiplexación!",
+        "concepts": ["Decodificación", "Comando Case", "Codificación One-hot"]
       },
       "counter0to3": {
         "title": "Contador 0-3 con Enable",
         "description": "Contador de 2 bits (0→1→2→3→0) que solo cuenta cuando enable='1'.",
         "instructions": [
-          "Crea una entidad 'counter_0to3' con clock, reset, enable y salida count (2 bits)",
+          "Crea una entidad 'counter_0to3' con reloj, reset, enable y salida count (2 bits)",
           "Usa process con rising_edge(clock) para lógica síncrona",
           "Si reset='1': count <= '00'",
           "Si enable='1': incrementa count (usa numeric_std para conversión)"
         ],
         "hint": "Usa library IEEE.NUMERIC_STD.ALL; y convierte: count <= std_logic_vector(unsigned(count) + 1);",
         "successMessage": "¡Excelente! ¡Has dominado la lógica secuencial con enable!",
-        "concepts": ["Lógica secuencial", "Flanco de reloj", "Señal Enable", "Conversiones numéricas"]
+        "concepts": ["Lógica secuencial", "Flanco de reloj", "Señal de Enable", "Conversiones numéricas"]
       }
     }
   },
   "tutorial": {
-    "title": "Tutorial Paso a Paso: Decodificador BCD a 7 Segmentos",
-    "subtitle": "Aprende a desarrollar el código VHDL paso a paso con validación en tiempo real",
+    "title": "Tutorial Paso a Paso: Decodificador BCD para 7 Segmentos",
+    "subtitle": "Aprende a desarrollar el código VHDL etapa por etapa con validación en tiempo real",
     "progress": "Progreso",
-    "stepsCompleted": "pasos completados",
+    "stepsCompleted": "etapas completadas",
     "verify": "Verificar Código",
-    "showHint": "Mostrar Pista",
+    "showHint": "Ver Pista",
     "hideHint": "Ocultar Pista",
     "previous": "Anterior",
     "next": "Siguiente",
     "finish": "Finalizar",
-    "allCompleted": "¡Felicitaciones! ¡Has completado todos los pasos del tutorial!",
+    "allCompleted": "¡Felicidades! ¡Has completado todas las etapas del tutorial!",
     "placeholder": "Escribe tu código VHDL aquí...",
     "feedback": {
-      "error": "❌ ¡Ups! El código aún no es correcto. Revisa las instrucciones e intenta nuevamente. Haz clic en 'Mostrar Pista' si necesitas ayuda."
+      "error": "❌ ¡Ups! El código no es correcto todavía. Revisa las instrucciones e inténtalo de nuevo. Haz clic en 'Ver Pista' si necesitas ayuda."
     },
     "steps": [
       {
         "title": "Paso 1: Declaración de la Entidad",
-        "description": "Comencemos declarando la entidad de nuestro decodificador BCD a display de 7 segmentos.",
+        "description": "Vamos a empezar declarando la entidad para nuestro decodificador BCD para display de 7 segmentos.",
         "instruction": "Completa el código declarando los puertos de entrada y salida. La entrada debe ser un vector de 4 bits (BCD) y la salida debe ser un vector de 7 bits (segmentos).",
         "hint": "Usa 'std_logic_vector' para vectores. Formato: (3 downto 0) para 4 bits y (6 downto 0) para 7 bits.",
-        "successMessage": "✅ ¡Perfecto! Declaraste correctamente la entidad con los puertos de entrada y salida."
+        "successMessage": "✅ ¡Perfecto! Has declarado correctamente la entidad con los puertos de entrada y salida."
       },
       {
-        "title": "Paso 2: Inicio de la Arquitectura",
+        "title": "Paso 2: Iniciando la Arquitectura",
         "description": "Ahora vamos a crear la arquitectura que implementa la lógica del decodificador.",
-        "instruction": "Declara la arquitectura de tipo 'behavioral' e inicia el proceso sensible a la señal 'entrada'.",
-        "hint": "Usa 'architecture behavioral of bcd_7seg is' y luego 'process(entrada)'.",
+        "instruction": "Declara la arquitectura 'behavioral' e inicia el proceso sensible a la señal 'entrada'.",
+        "hint": "Usa 'architecture behavioral of bcd_7seg is' y después 'process(entrada)'.",
         "successMessage": "✅ ¡Excelente! La estructura de la arquitectura y del proceso es correcta."
       },
       {
         "title": "Paso 3: Estructura Case",
         "description": "Dentro del proceso, usaremos una estructura 'case' para mapear cada entrada BCD a los segmentos correspondientes.",
-        "instruction": "Agrega la estructura 'case' que analiza el valor de 'entrada' y completa los primeros 3 números (0, 1 y 2).",
+        "instruction": "Añade la estructura 'case' que analiza el valor 'entrada' y completa los 3 primeros números (0, 1 y 2).",
         "hint": "Formato: case entrada is when \"0000\" => segmentos <= \"1111110\"; -- Para el número 0",
-        "successMessage": "✅ ¡Muy bien! Mapeaste correctamente los números 0, 1 y 2. ¡Continúa así!"
+        "successMessage": "✅ ¡Muy bien! Has mapeado correctamente los números 0, 1 y 2. ¡Sigue así!"
       },
       {
         "title": "Paso 4: Completando los Números 3-6",
-        "description": "Agreguemos más números a nuestro decodificador.",
+        "description": "Vamos a añadir más números a nuestro decodificador.",
         "instruction": "Completa el mapeo para los números 3, 4, 5 y 6.",
         "hint": "3='1111001', 4='0110011', 5='1011011', 6='1011111'",
-        "successMessage": "✅ ¡Fantástico! Solo faltan los últimos números."
+        "successMessage": "✅ ¡Fantástico! Faltan solo los últimos números."
       },
       {
         "title": "Paso 5: Finalizando con 7, 8 y 9",
-        "description": "¡Última etapa! Completemos el decodificador con los números restantes.",
+        "description": "¡Etapa final! Vamos a completar el decodificador con los números restantes.",
         "instruction": "Completa el mapeo para los números 7, 8 y 9.",
         "hint": "7='1110000', 8='1111111', 9='1111011'",
-        "successMessage": "🎉 ¡Felicitaciones! ¡Completaste el decodificador BCD a display de 7 segmentos!"
+        "successMessage": "🎉 ¡Felicidades! ¡Has completado el decodificador BCD para display de 7 segmentos!"
       }
     ]
   },
   "lab": {
     "title": "Laboratorio Interactivo VHDL",
-    "subtitle": "Aprende a programar un decodificador BCD a display de 7 segmentos",
+    "subtitle": "Aprende a programar un decodificador BCD para display de 7 segmentos",
     "editor": "Editor de Código VHDL",
     "display": "Display de 7 Segmentos",
     "simulate": "Simular Código",
@@ -276,13 +308,13 @@
     "currentPattern": "Patrón Actual",
     "segments": "Mapeo de Segmentos",
     "placeholder": "Escribe tu código VHDL aquí...",
-    "instructions": "Instrucciones",
+    "instructions": "Instrucciones:",
     "instructionsList": [
-      "Completa el código VHDL arriba con los patrones de segmentos",
+      "Completa el código VHDL de arriba con los patrones de segmentos",
       "Cada patrón es una cadena de 7 bits: \"abcdefg\"",
       "1 = segmento encendido, 0 = segmento apagado",
       "Haz clic en \"Simular Código\" para probar tu implementación",
-      "Usa el control a la derecha para ver los números en el display"
+      "Usa el control de la derecha para ver los números en el display"
     ],
     "segmentLabels": {
       "a": "a = segmento superior",
@@ -304,7 +336,7 @@
     "subtitle": "Diccionario completo de términos, operadores y conceptos de VHDL con ejemplos prácticos.",
     "search": "Buscar término o concepto...",
     "termsFound": "término(s) encontrado(s)",
-    "noResults": "No se encontraron términos. Intenta con otro término de búsqueda.",
+    "noResults": "Ningún término encontrado. Intenta otro término de búsqueda.",
     "example": "Ejemplo",
     "categoryCount": "términos",
     "categories": {
@@ -316,15 +348,15 @@
   },
   "gamification": {
     "title": "Logros y Progreso",
-    "subtitle": "¡Sigue tu camino de aprendizaje y gana insignias!",
+    "subtitle": "¡Sigue tu viaje de aprendizaje y obtén insignias!",
     "overallProgress": "Tu Progreso General",
-    "continueMessage": "¡Continúa aprendiendo para desbloquear más logros!",
+    "continueMessage": "¡Sigue aprendiendo para desbloquear más logros!",
     "totalPoints": "de {{total}} puntos totales",
     "totalBadges": "de {{total}} insignias",
     "completed": "completado",
-    "earnedBadges": "Insignias Ganadas ({{count}})",
+    "earnedBadges": "Insignias Obtenidas ({{count}})",
     "nextAchievements": "Próximos Logros ({{count}})",
-    "unlocked": "¡Desbloqueada!",
+    "unlocked": "¡Obtenida!",
     "howToUnlock": "Cómo desbloquear:",
     "motivational": {
       "start": {
@@ -333,11 +365,11 @@
       },
       "progress": {
         "title": "¡Gran progreso!",
-        "message": "¡Sigue así para desbloquear las {{total}} insignias!"
+        "message": "¡Sigue así para desbloquear todas las {{total}} insignias!"
       },
       "master": {
         "title": "¡Maestro VHDL! 🎉",
-        "message": "¡Felicitaciones! ¡Has ganado TODAS las insignias disponibles!"
+        "message": "¡Felicidades! ¡Has obtenido TODAS las insignias disponibles!"
       }
     },
     "badges": {
@@ -352,23 +384,23 @@
         "requirement": "Completa todos los ejercicios de puertas lógicas"
       },
       "quizChampion": {
-        "title": "Campeón del Quiz",
-        "description": "Obtén 90% o más en el quiz",
-        "requirement": "Acierta 9/10 preguntas del quiz"
+        "title": "Campeón del Cuestionario",
+        "description": "Acierta 90% o más en el cuestionario",
+        "requirement": "Acierta 9/10 preguntas del cuestionario"
       },
       "arithmeticExpert": {
         "title": "Experto en Aritmética",
         "description": "Completa todos los ejercicios de sumadores",
-        "requirement": "Completa Half Adder y Full Adder"
+        "requirement": "Completa el Half Adder y Full Adder"
       },
       "sequentialWizard": {
         "title": "Mago Secuencial",
-        "description": "Domina la lógica secuencial y contadores",
+        "description": "Domina la lógica secuencial y los contadores",
         "requirement": "Completa el ejercicio del contador"
       },
       "displayDecoder": {
         "title": "Decodificador de Display",
-        "description": "Crea el decodificador BCD a 7 segmentos",
+        "description": "Crea el decodificador BCD para 7 segmentos",
         "requirement": "Completa el tutorial de 7 segmentos"
       },
       "knowledgeSeeker": {
@@ -379,8 +411,90 @@
       "vhdlMaster": {
         "title": "Maestro VHDL",
         "description": "Completa TODOS los ejercicios disponibles",
-        "requirement": "100% de finalización"
+        "requirement": "100% completado"
       }
     }
+  },
+  "resources": {
+    "title": "Recursos",
+    "subtitle": "Materiales complementarios para profundizar tus conocimientos",
+    "documentation": {
+      "title": "Documentación",
+      "items": {
+        "ieee": "Estándar IEEE VHDL",
+        "tutorials": "Tutoriales en Línea",
+        "examples": "Ejemplos de Código"
+      }
+    },
+    "tools": {
+      "title": "Herramientas",
+      "items": {
+        "simulators": "Simuladores VHDL",
+        "ides": "IDEs Recomendados",
+        "fpga": "Herramientas FPGA"
+      }
+    },
+    "community": {
+      "title": "Comunidad",
+      "items": {
+        "forums": "Foros",
+        "discord": "Discord",
+        "github": "Proyectos en GitHub"
+      }
+    }
+  },
+  "about": {
+    "title": "Acerca del Proyecto",
+    "subtitle": "Nuestra misión es democratizar la enseñanza de VHDL",
+    "mission": {
+      "title": "Misión",
+      "text": "Hacer que el aprendizaje de VHDL sea accesible, interactivo y eficiente para estudiantes y profesionales de todo el mundo."
+    },
+    "vision": {
+      "title": "Visión",
+      "text": "Ser la principal plataforma educativa de VHDL, reconocida por la calidad del contenido y la experiencia de aprendizaje."
+    },
+    "values": {
+      "title": "Valores",
+      "items": {
+        "quality": "Calidad del Contenido",
+        "accessibility": "Accesibilidad",
+        "innovation": "Innovación Educativa",
+        "community": "Comunidad Activa"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contacta con Nosotros",
+    "subtitle": "Envía tus dudas, sugerencias o feedback",
+    "form": {
+      "name": "Nombre",
+      "email": "Correo Electrónico",
+      "message": "Mensaje",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando..."
+    },
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Error al enviar el mensaje. Inténtalo de nuevo."
+  },
+  "footer": {
+    "description": "Plataforma educativa para aprender VHDL de forma interactiva y práctica.",
+    "links": {
+      "title": "Enlaces Útiles",
+      "documentation": "Documentación",
+      "tutorials": "Tutoriales",
+      "examples": "Ejemplos"
+    },
+    "support": {
+      "title": "Soporte",
+      "faq": "FAQ",
+      "contact": "Contacto",
+      "community": "Comunidad"
+    },
+    "rights": "Todos los derechos reservados."
+  },
+  "theme": {
+    "light": "Claro",
+    "dark": "Oscuro"
   }
 }
