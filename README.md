@@ -1,9 +1,9 @@
-*🧠 Aprender VHDL — Plataforma Educacional Interativa*
+## 🧠 Aprender VHDL — Plataforma Educacional Interativa
 
 Aprender VHDL é uma plataforma web interativa desenvolvida para ensinar a linguagem de descrição de hardware VHDL de forma prática, acessível e multilíngue.
 O projeto combina teoria, exercícios, laboratórios e quizzes para auxiliar estudantes e profissionais na compreensão do funcionamento do design digital e lógica programável (FPGA, ASIC, etc.).
 
-🚀 Funcionalidades Principais
+## 🚀 Funcionalidades Principais
 
 🌍 Suporte a múltiplos idiomas: Português, Inglês e Espanhol.
 
@@ -19,7 +19,7 @@ O projeto combina teoria, exercícios, laboratórios e quizzes para auxiliar est
 
 🌓 Modo claro e escuro: design responsivo e confortável para leitura.
 
-🧩 Estrutura do Projeto
+## 🧩 Estrutura do Projeto
 📂 src/
  ┣ 📁 components/           # Componentes reutilizáveis da interface
  ┣ 📁 sections/             # Seções principais do site (Hero, About, Resources etc.)
@@ -30,7 +30,7 @@ O projeto combina teoria, exercícios, laboratórios e quizzes para auxiliar est
  ┣ 📄 index.jsx             # Ponto de entrada
  ┗ 📄 styles.css            # Estilos globais
 
-🏗️ Estrutura de Aprendizado
+## 🏗️ Estrutura de Aprendizado
 Nível	Módulo	Descrição
 🧱 Básico	Fundamentos do VHDL	Introdução à linguagem e primeiros exercícios
 ⚙️ Intermediário	Estruturas e Componentes	Modelagem de circuitos e projetos médios
@@ -39,17 +39,17 @@ Nível	Módulo	Descrição
 🕹️ Gamificação	Conquistas	Sistema de progressão e recompensas
 🎨 Design e Usabilidade
 
-Interface limpa e moderna
+**Interface limpa e moderna**
 
-Layout totalmente responsivo
+**Layout totalmente responsivo**
 
-Navegação fluida com rolagem suave
+**Navegação fluida com rolagem suave**
 
-Alternância de tema (claro/escuro)
+**Alternância de tema (claro/escuro)**
 
-Ícones minimalistas e cores harmônicas (azul, cinza e amarelo)
+**Ícones minimalistas e cores harmônicas (azul, cinza e amarelo)**
 
-🌐 Internacionalização (i18n)
+## 🌐 Internacionalização (i18n)
 
 A plataforma detecta automaticamente o idioma do navegador e permite alternância manual entre:
 
@@ -61,7 +61,7 @@ A plataforma detecta automaticamente o idioma do navegador e permite alternânci
 
 Todo o conteúdo e navegação estão traduzidos de forma consistente entre os idiomas.
 
-⚙️ Tecnologias Utilizadas
+## ⚙️ Tecnologias Utilizadas
 
 React.js — Framework principal
 
@@ -73,7 +73,7 @@ i18next — Gerenciamento de múltiplos idiomas
 
 Vite — Build e ambiente de desenvolvimento rápido
 
-📈 Futuras Expansões
+## 📈 Futuras Expansões
 
 Adição de novos módulos de aprendizado.
 
@@ -82,10 +82,6 @@ Suporte a outras linguagens de descrição e programação (Verilog, SystemVeril
 Integração com simuladores de VHDL online.
 
 Perfis de usuário e sistema de progresso.
-
-
-Abra um pull request com suas melhorias, correções ou novas ideias.
-Certifique-se de manter o código limpo, comentado e com commits descritivos.
 
 🌟 Agradecimentos
 
