@@ -3,9 +3,14 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Play, AlertCircle, CheckCircle } from "lucide-react";
 
 const VHDLSevenSegmentLab = () => {
+  const { t } = useTranslation();
+  const instructionsList = t('lab.instructionsList', { returnObjects: true }) as string[];
+  const segmentLabels = t('lab.segmentLabels', { returnObjects: true }) as Record<string, string>;
+  
   const initialCode = `-- Decodificador BCD para Display de 7 Segmentos
 -- Complete o mapeamento abaixo para os números 0-9
 -- Formato: entrada => "abcdefg" (1=aceso, 0=apagado)
@@ -63,7 +68,7 @@ end behavioral;`;
       if (!hasAllNumbers) {
         setFeedback({
           type: "error",
-          message: "Erro: Mapeamento incompleto. Certifique-se de definir os padrões para todos os números de 0 a 9."
+          message: t('lab.feedback.incomplete')
         });
         return false;
       }
@@ -71,7 +76,7 @@ end behavioral;`;
       setMappingTable(mapping);
       setFeedback({
         type: "success",
-        message: "✅ Código analisado com sucesso! Mapeamento extraído. Teste diferentes números no controle de entrada."
+        message: t('lab.feedback.success')
       });
       
       // Atualiza o display com o número atual
@@ -81,7 +86,7 @@ end behavioral;`;
     } catch (error) {
       setFeedback({
         type: "error",
-        message: "Erro ao analisar o código VHDL. Verifique a sintaxe do seu mapeamento."
+        message: t('lab.feedback.error')
       });
       return false;
     }
@@ -166,7 +171,7 @@ end behavioral;`;
         </div>
         
         <div className="mt-8 text-center">
-          <p className="text-sm text-muted-foreground mb-2">Entrada Decimal</p>
+          <p className="text-sm text-muted-foreground mb-2">{t('lab.input')}</p>
           <div className="flex items-center gap-4 justify-center">
             <Button
               variant="outline"
@@ -194,7 +199,7 @@ end behavioral;`;
             </Button>
           </div>
           <p className="text-xs text-muted-foreground mt-2">
-            Binário: {inputNumber.toString(2).padStart(4, '0')}
+            {t('lab.binary')}: {inputNumber.toString(2).padStart(4, '0')}
           </p>
         </div>
       </div>
@@ -205,10 +210,10 @@ end behavioral;`;
     <div className="w-full max-w-7xl mx-auto space-y-6">
       <div className="text-center space-y-2">
         <h2 className="text-3xl font-bold bg-gradient-to-r from-tech-cyan via-tech-purple to-tech-pink bg-clip-text text-transparent">
-          Laboratório Interativo VHDL
+          {t('lab.title')}
         </h2>
         <p className="text-muted-foreground">
-          Aprenda a programar um decodificador BCD para display de 7 segmentos
+          {t('lab.subtitle')}
         </p>
       </div>
 
@@ -218,7 +223,7 @@ end behavioral;`;
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <span className="text-tech-cyan">📝</span>
-              Editor de Código VHDL
+              {t('lab.editor')}
             </CardTitle>
           </CardHeader>
           <CardContent className="space-y-4">
@@ -226,7 +231,7 @@ end behavioral;`;
               value={code}
               onChange={(e) => setCode(e.target.value)}
               className="font-mono text-sm min-h-[400px] bg-background/80"
-              placeholder="Digite seu código VHDL aqui..."
+              placeholder={t('lab.placeholder')}
             />
             
             <Button
@@ -235,7 +240,7 @@ end behavioral;`;
               variant="default"
             >
               <Play className="w-4 h-4 mr-2" />
-              Simular Código
+              {t('lab.simulate')}
             </Button>
             
             {feedback && (
@@ -258,13 +263,11 @@ end behavioral;`;
             )}
             
             <div className="space-y-2 text-sm text-muted-foreground">
-              <p className="font-semibold text-foreground">💡 Instruções:</p>
+              <p className="font-semibold text-foreground">💡 {t('lab.instructions')}</p>
               <ul className="list-disc list-inside space-y-1">
-                <li>Complete o código VHDL acima com os padrões de segmentos</li>
-                <li>Cada padrão é uma string de 7 bits: "abcdefg"</li>
-                <li>1 = segmento aceso, 0 = segmento apagado</li>
-                <li>Clique em "Simular Código" para testar sua implementação</li>
-                <li>Use o controle à direita para ver os números no display</li>
+                {instructionsList.map((instruction, idx) => (
+                  <li key={idx}>{instruction}</li>
+                ))}
               </ul>
             </div>
           </CardContent>
@@ -275,25 +278,25 @@ end behavioral;`;
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <span className="text-tech-purple">🔢</span>
-              Display de 7 Segmentos
+              {t('lab.display')}
             </CardTitle>
           </CardHeader>
           <CardContent>
             {renderSevenSegment()}
             
             <div className="mt-6 p-4 bg-muted/50 rounded-lg space-y-2 text-sm">
-              <p className="font-semibold text-foreground">Mapeamento de Segmentos:</p>
+              <p className="font-semibold text-foreground">{t('lab.segments')}:</p>
               <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground">
-                <div>a = segmento superior</div>
-                <div>b = superior direito</div>
-                <div>c = inferior direito</div>
-                <div>d = segmento inferior</div>
-                <div>e = inferior esquerdo</div>
-                <div>f = superior esquerdo</div>
-                <div>g = segmento central</div>
+                <div>{segmentLabels.a}</div>
+                <div>{segmentLabels.b}</div>
+                <div>{segmentLabels.c}</div>
+                <div>{segmentLabels.d}</div>
+                <div>{segmentLabels.e}</div>
+                <div>{segmentLabels.f}</div>
+                <div>{segmentLabels.g}</div>
               </div>
               <div className="mt-3 p-2 bg-background/80 rounded font-mono text-xs">
-                Padrão Atual: {segments}
+                {t('lab.currentPattern')}: {segments}
               </div>
             </div>
           </CardContent>

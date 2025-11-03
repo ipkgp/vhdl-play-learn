@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
@@ -166,6 +167,7 @@ end behavioral;`,
 ];
 
 const VHDLIntermediateExercises = () => {
+  const { t } = useTranslation();
   const [currentExercise, setCurrentExercise] = useState(0);
   const [userCode, setUserCode] = useState(exercises[0].initialCode);
   const [feedback, setFeedback] = useState<{ type: "success" | "error"; message: string } | null>(null);
@@ -193,7 +195,7 @@ const VHDLIntermediateExercises = () => {
     } else {
       setFeedback({
         type: "error",
-        message: "O código ainda não está completo. Revise as instruções e tente novamente.",
+        message: t('intermediateExercises.feedback.error'),
       });
     }
   };
@@ -223,16 +225,16 @@ const VHDLIntermediateExercises = () => {
     <div className="max-w-6xl mx-auto space-y-8">
       <div className="text-center space-y-4">
         <h2 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-          Exercícios Intermediários
+          {t('intermediateExercises.title')}
         </h2>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Circuitos aritméticos e sequenciais para dominar VHDL.
+          {t('intermediateExercises.subtitle')}
         </p>
 
         {/* Progress Bar */}
         <div className="max-w-md mx-auto">
           <div className="flex justify-between text-sm text-muted-foreground mb-2">
-            <span>Progresso</span>
+            <span>{t('intermediateExercises.progress')}</span>
             <span>{Math.round(progress)}%</span>
           </div>
           <div className="h-2 bg-muted rounded-full overflow-hidden">
@@ -248,9 +250,9 @@ const VHDLIntermediateExercises = () => {
         <Card className="border-primary/50 bg-primary/5">
           <CardContent className="pt-6 text-center">
             <Trophy className="w-16 h-16 text-primary mx-auto mb-4" />
-            <h3 className="text-2xl font-bold mb-2">Nível Intermediário Completo! 🎉</h3>
+            <h3 className="text-2xl font-bold mb-2">{t('intermediateExercises.completed')}</h3>
             <p className="text-muted-foreground">
-              Você está dominando VHDL! Continue praticando com projetos mais avançados.
+              {t('intermediateExercises.completedMessage')}
             </p>
           </CardContent>
         </Card>
@@ -260,7 +262,7 @@ const VHDLIntermediateExercises = () => {
         <CardHeader>
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-medium text-muted-foreground">
-              Exercício {currentExercise + 1} de {exercises.length}
+              {t('intermediateExercises.exerciseOf', { current: currentExercise + 1, total: exercises.length })}
             </span>
             {completedExercises[currentExercise] && (
               <CheckCircle2 className="w-5 h-5 text-green-500" />
@@ -274,7 +276,7 @@ const VHDLIntermediateExercises = () => {
           {/* Instructions */}
           <div className="bg-muted/50 p-4 rounded-lg">
             <h4 className="font-semibold mb-2 flex items-center gap-2">
-              📋 Instruções
+              📋 {t('intermediateExercises.instructions')}
             </h4>
             <ul className="space-y-2">
               {exercise.instructions.map((instruction, idx) => (
@@ -288,7 +290,7 @@ const VHDLIntermediateExercises = () => {
 
           {/* Concepts */}
           <div className="bg-muted/50 p-4 rounded-lg">
-            <h4 className="font-semibold mb-2">💡 Conceitos Aplicados</h4>
+            <h4 className="font-semibold mb-2">💡 {t('intermediateExercises.conceptsApplied')}</h4>
             <div className="flex flex-wrap gap-2">
               {exercise.concepts.map((concept, idx) => (
                 <span
@@ -303,12 +305,12 @@ const VHDLIntermediateExercises = () => {
 
           {/* Code Editor */}
           <div>
-            <label className="block text-sm font-medium mb-2">Seu código VHDL:</label>
+            <label className="block text-sm font-medium mb-2">{t('intermediateExercises.yourCode')}</label>
             <Textarea
               value={userCode}
               onChange={(e) => setUserCode(e.target.value)}
               className="font-mono text-sm min-h-[400px]"
-              placeholder="Digite seu código VHDL aqui..."
+              placeholder={t('intermediateExercises.placeholder')}
             />
           </div>
 
@@ -316,11 +318,11 @@ const VHDLIntermediateExercises = () => {
           <div className="flex gap-3 flex-wrap">
             <Button onClick={handleVerify} className="flex-1 min-w-[200px]">
               <CheckCircle2 className="w-4 h-4 mr-2" />
-              Verificar Código
+              {t('intermediateExercises.verify')}
             </Button>
             <Button onClick={() => setShowHint(!showHint)} variant="outline" className="flex-1 min-w-[200px]">
               <Lightbulb className="w-4 h-4 mr-2" />
-              {showHint ? "Esconder Dica" : "Ver Dica"}
+              {showHint ? t('intermediateExercises.hideHint') : t('intermediateExercises.showHint')}
             </Button>
           </div>
 
@@ -330,7 +332,7 @@ const VHDLIntermediateExercises = () => {
               <div className="flex gap-2">
                 <Lightbulb className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
                 <div>
-                  <h4 className="font-semibold mb-1">💡 Dica</h4>
+                  <h4 className="font-semibold mb-1">💡 {t('intermediateExercises.hint')}</h4>
                   <p className="text-sm">{exercise.hint}</p>
                 </div>
               </div>
@@ -359,10 +361,10 @@ const VHDLIntermediateExercises = () => {
           <div className="flex justify-between pt-4 border-t">
             <Button onClick={handlePrevious} disabled={currentExercise === 0} variant="outline">
               <ArrowLeft className="w-4 h-4 mr-2" />
-              Anterior
+              {t('intermediateExercises.previous')}
             </Button>
             <Button onClick={handleNext} disabled={currentExercise === exercises.length - 1}>
-              Próximo
+              {t('intermediateExercises.next')}
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>

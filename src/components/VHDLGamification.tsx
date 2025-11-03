@@ -1,3 +1,4 @@
+import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Trophy, Star, Award, Zap, Target, BookOpen, Code, Cpu } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
@@ -88,6 +89,8 @@ const badges: Badge[] = [
 ];
 
 const VHDLGamification = () => {
+  const { t } = useTranslation();
+  
   // Em uma implementação real, esses valores viriam de um contexto/estado global
   const userProgress = {
     basicExercises: 2,
@@ -139,34 +142,34 @@ const VHDLGamification = () => {
         <div className="flex items-center justify-center gap-3">
           <Trophy className="w-10 h-10 text-primary" />
           <h2 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Conquistas e Progresso
+            {t('gamification.title')}
           </h2>
         </div>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Acompanhe sua jornada de aprendizado e conquiste badges!
+          {t('gamification.subtitle')}
         </p>
       </div>
 
       {/* Overall Progress */}
       <Card className="border-primary/20">
         <CardHeader>
-          <CardTitle className="text-2xl">Seu Progresso Geral</CardTitle>
-          <CardDescription>Continue aprendendo para desbloquear mais conquistas!</CardDescription>
+          <CardTitle className="text-2xl">{t('gamification.overallProgress')}</CardTitle>
+          <CardDescription>{t('gamification.continueMessage')}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-3xl font-bold text-primary">{userProgress.totalPoints}</p>
-              <p className="text-sm text-muted-foreground">de {totalPossiblePoints} pontos totais</p>
+              <p className="text-sm text-muted-foreground">{t('gamification.totalPoints', { total: totalPossiblePoints })}</p>
             </div>
             <div className="text-right">
               <p className="text-3xl font-bold text-primary">{earnedBadges.length}</p>
-              <p className="text-sm text-muted-foreground">de {badges.length} badges</p>
+              <p className="text-sm text-muted-foreground">{t('gamification.totalBadges', { total: badges.length })}</p>
             </div>
           </div>
           <Progress value={progressPercentage} className="h-3" />
           <p className="text-center text-sm text-muted-foreground">
-            {progressPercentage.toFixed(0)}% concluído
+            {progressPercentage.toFixed(0)}% {t('gamification.completed')}
           </p>
         </CardContent>
       </Card>
@@ -176,7 +179,7 @@ const VHDLGamification = () => {
         <div>
           <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <Award className="w-6 h-6 text-primary" />
-            Badges Conquistadas ({earnedBadges.length})
+            {t('gamification.earnedBadges', { count: earnedBadges.length })}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {earnedBadges.map((badge) => (
@@ -195,7 +198,7 @@ const VHDLGamification = () => {
                   <p className="text-sm text-muted-foreground mb-2">{badge.description}</p>
                   <div className="flex items-center gap-2 text-xs text-green-600 dark:text-green-400">
                     <Trophy className="w-3 h-3" />
-                    Conquistada!
+                    {t('gamification.unlocked')}
                   </div>
                 </CardContent>
               </Card>
@@ -209,7 +212,7 @@ const VHDLGamification = () => {
         <div>
           <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
             <Target className="w-6 h-6 text-muted-foreground" />
-            Próximas Conquistas ({lockedBadges.length})
+            {t('gamification.nextAchievements', { count: lockedBadges.length })}
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {lockedBadges.map((badge) => (
@@ -226,7 +229,7 @@ const VHDLGamification = () => {
                 <CardContent>
                   <p className="text-sm text-muted-foreground mb-2">{badge.description}</p>
                   <div className="bg-muted/50 p-2 rounded text-xs">
-                    <p className="font-semibold mb-1">Como desbloquear:</p>
+                    <p className="font-semibold mb-1">{t('gamification.howToUnlock')}:</p>
                     <p>{badge.requirement}</p>
                   </div>
                 </CardContent>
@@ -242,27 +245,27 @@ const VHDLGamification = () => {
           {earnedBadges.length === 0 && (
             <>
               <Star className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Comece sua jornada!</h3>
+              <h3 className="text-xl font-bold mb-2">{t('gamification.motivational.start.title')}</h3>
               <p className="text-muted-foreground">
-                Complete seu primeiro exercício para ganhar sua primeira badge!
+                {t('gamification.motivational.start.message')}
               </p>
             </>
           )}
           {earnedBadges.length > 0 && earnedBadges.length < badges.length && (
             <>
               <Zap className="w-12 h-12 text-primary mx-auto mb-4" />
-              <h3 className="text-xl font-bold mb-2">Ótimo progresso!</h3>
+              <h3 className="text-xl font-bold mb-2">{t('gamification.motivational.progress.title')}</h3>
               <p className="text-muted-foreground">
-                Continue assim para desbloquear todas as {badges.length} badges!
+                {t('gamification.motivational.progress.message', { total: badges.length })}
               </p>
             </>
           )}
           {earnedBadges.length === badges.length && (
             <>
               <Award className="w-12 h-12 text-primary mx-auto mb-4 animate-pulse" />
-              <h3 className="text-xl font-bold mb-2">Mestre VHDL! 🎉</h3>
+              <h3 className="text-xl font-bold mb-2">{t('gamification.motivational.master.title')}</h3>
               <p className="text-muted-foreground">
-                Parabéns! Você conquistou TODAS as badges disponíveis!
+                {t('gamification.motivational.master.message')}
               </p>
             </>
           )}

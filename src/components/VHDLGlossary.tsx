@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -165,6 +166,7 @@ const glossaryTerms: GlossaryTerm[] = [
 ];
 
 const VHDLGlossary = () => {
+  const { t } = useTranslation();
   const [searchTerm, setSearchTerm] = useState("");
 
   const filteredTerms = glossaryTerms.filter(
@@ -174,18 +176,7 @@ const VHDLGlossary = () => {
   );
 
   const getCategoryName = (category: string) => {
-    switch (category) {
-      case "basic":
-        return "Conceitos Básicos";
-      case "advanced":
-        return "Conceitos Avançados";
-      case "operator":
-        return "Operadores";
-      case "type":
-        return "Tipos de Dados";
-      default:
-        return "";
-    }
+    return t(`glossary.categories.${category}`);
   };
 
   const categories = ["basic", "operator", "type", "advanced"];
@@ -196,11 +187,11 @@ const VHDLGlossary = () => {
         <div className="flex items-center justify-center gap-3">
           <BookOpen className="w-10 h-10 text-primary" />
           <h2 className="text-4xl font-bold bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
-            Glossário Interativo VHDL
+            {t('glossary.title')}
           </h2>
         </div>
         <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-          Dicionário completo de termos, operadores e conceitos de VHDL com exemplos práticos.
+          {t('glossary.subtitle')}
         </p>
       </div>
 
@@ -211,14 +202,14 @@ const VHDLGlossary = () => {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-4 h-4" />
             <Input
               type="text"
-              placeholder="Buscar termo ou conceito..."
+              placeholder={t('glossary.search')}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="pl-10"
             />
           </div>
           <p className="text-sm text-muted-foreground mt-2">
-            {filteredTerms.length} termo(s) encontrado(s)
+            {filteredTerms.length} {t('glossary.termsFound')}
           </p>
         </CardContent>
       </Card>
@@ -232,7 +223,7 @@ const VHDLGlossary = () => {
           <Card key={category} className="border-primary/20">
             <CardHeader>
               <CardTitle className="text-2xl">{getCategoryName(category)}</CardTitle>
-              <CardDescription>{categoryTerms.length} termos</CardDescription>
+              <CardDescription>{categoryTerms.length} {t('glossary.categoryCount')}</CardDescription>
             </CardHeader>
             <CardContent>
               <Accordion type="single" collapsible className="w-full">
@@ -247,7 +238,7 @@ const VHDLGlossary = () => {
                         {item.example && (
                           <div className="bg-muted p-4 rounded-lg">
                             <p className="text-sm font-semibold text-muted-foreground mb-2">
-                              Exemplo:
+                              {t('glossary.example')}:
                             </p>
                             <pre className="text-sm font-mono overflow-x-auto">
                               {item.example}
@@ -267,7 +258,7 @@ const VHDLGlossary = () => {
       {filteredTerms.length === 0 && (
         <Card>
           <CardContent className="pt-6 text-center text-muted-foreground">
-            Nenhum termo encontrado. Tente outro termo de busca.
+            {t('glossary.noResults')}
           </CardContent>
         </Card>
       )}

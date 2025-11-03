@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { CheckCircle, XCircle, ArrowRight, Lightbulb, Trophy } from "lucide-react";
 import { Progress } from "@/components/ui/progress";
 
@@ -17,14 +18,23 @@ interface Step {
 }
 
 const VHDLStepByStepTutorial = () => {
-  const steps: Step[] = [
-    {
-      id: 1,
-      title: "Passo 1: Declaração da Entidade",
-      description: "Vamos começar declarando a entidade do nosso decodificador BCD para display de 7 segmentos.",
-      instruction: "Complete o código declarando as portas de entrada e saída. A entrada deve ser um vetor de 4 bits (BCD) e a saída deve ser um vetor de 7 bits (segmentos).",
-      hint: "Use 'std_logic_vector' para vetores. Formato: (3 downto 0) para 4 bits e (6 downto 0) para 7 bits.",
-      initialCode: `-- Complete a declaração da entidade
+  const { t } = useTranslation();
+  const stepsData = t('tutorial.steps', { returnObjects: true }) as any[];
+  
+  const steps: Step[] = stepsData.map((stepData, index) => ({
+    id: index + 1,
+    title: stepData.title,
+    description: stepData.description,
+    instruction: stepData.instruction,
+    hint: stepData.hint,
+    successMessage: stepData.successMessage,
+    initialCode: getInitialCode(index),
+    expectedPattern: getExpectedPattern(index)
+  }));
+
+  function getInitialCode(index: number): string {
+    const codes = [
+`-- Complete a declaração da entidade
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -36,16 +46,7 @@ entity bcd_7seg is
     
   );
 end bcd_7seg;`,
-      expectedPattern: /entrada\s*:\s*in\s+std_logic_vector\s*\(\s*3\s+downto\s+0\s*\)/i,
-      successMessage: "✅ Perfeito! Você declarou corretamente a entidade com as portas de entrada e saída."
-    },
-    {
-      id: 2,
-      title: "Passo 2: Início da Architecture",
-      description: "Agora vamos criar a arquitetura que implementa a lógica do decodificador.",
-      instruction: "Declare a architecture do tipo 'behavioral' e inicie o processo sensível ao sinal 'entrada'.",
-      hint: "Use 'architecture behavioral of bcd_7seg is' e depois 'process(entrada)'.",
-      initialCode: `-- Complete a declaração da architecture e do processo
+`-- Complete a declaração da architecture e do processo
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
@@ -59,16 +60,7 @@ use IEEE.STD_LOGIC_1164.ALL;
   -- Finalize o processo aqui
   
 -- Finalize a architecture aqui`,
-      expectedPattern: /architecture\s+behavioral\s+of\s+bcd_7seg\s+is.*begin.*process\s*\(\s*entrada\s*\)/is,
-      successMessage: "✅ Excelente! A estrutura da architecture e do processo está correta."
-    },
-    {
-      id: 3,
-      title: "Passo 3: Estrutura Case",
-      description: "Dentro do processo, usaremos uma estrutura 'case' para mapear cada entrada BCD aos segmentos correspondentes.",
-      instruction: "Adicione a estrutura 'case' que analisa o valor de 'entrada' e complete os primeiros 3 números (0, 1 e 2).",
-      hint: "Formato: case entrada is when \"0000\" => segmentos <= \"1111110\"; -- Para o número 0",
-      initialCode: `architecture behavioral of bcd_7seg is
+`architecture behavioral of bcd_7seg is
 begin
   process(entrada)
   begin
@@ -84,16 +76,7 @@ begin
     end case;
   end process;
 end behavioral;`,
-      expectedPattern: /case\s+entrada\s+is.*when\s+"0000"\s*=>\s*segmentos\s*<=\s*"1111110".*when\s+"0001"\s*=>\s*segmentos\s*<=\s*"0110000".*when\s+"0010"\s*=>\s*segmentos\s*<=\s*"1101101"/is,
-      successMessage: "✅ Muito bem! Você mapeou corretamente os números 0, 1 e 2. Continue assim!"
-    },
-    {
-      id: 4,
-      title: "Passo 4: Completando os Números 3-6",
-      description: "Vamos adicionar mais números ao nosso decodificador.",
-      instruction: "Complete o mapeamento para os números 3, 4, 5 e 6.",
-      hint: "3='1111001', 4='0110011', 5='1011011', 6='1011111'",
-      initialCode: `architecture behavioral of bcd_7seg is
+`architecture behavioral of bcd_7seg is
 begin
   process(entrada)
   begin
@@ -113,16 +96,7 @@ begin
     end case;
   end process;
 end behavioral;`,
-      expectedPattern: /when\s+"0011"\s*=>\s*segmentos\s*<=\s*"1111001".*when\s+"0100"\s*=>\s*segmentos\s*<=\s*"0110011".*when\s+"0101"\s*=>\s*segmentos\s*<=\s*"1011011".*when\s+"0110"\s*=>\s*segmentos\s*<=\s*"1011111"/is,
-      successMessage: "✅ Fantástico! Faltam apenas os últimos números."
-    },
-    {
-      id: 5,
-      title: "Passo 5: Finalizando com 7, 8 e 9",
-      description: "Última etapa! Vamos completar o decodificador com os números restantes.",
-      instruction: "Complete o mapeamento para os números 7, 8 e 9.",
-      hint: "7='1110000', 8='1111111', 9='1111011'",
-      initialCode: `architecture behavioral of bcd_7seg is
+`architecture behavioral of bcd_7seg is
 begin
   process(entrada)
   begin
@@ -143,11 +117,21 @@ begin
       when others => segmentos <= "0000000";
     end case;
   end process;
-end behavioral;`,
-      expectedPattern: /when\s+"0111"\s*=>\s*segmentos\s*<=\s*"1110000".*when\s+"1000"\s*=>\s*segmentos\s*<=\s*"1111111".*when\s+"1001"\s*=>\s*segmentos\s*<=\s*"1111011"/is,
-      successMessage: "🎉 Parabéns! Você completou o decodificador BCD para display de 7 segmentos!"
-    }
-  ];
+end behavioral;`
+    ];
+    return codes[index] || codes[0];
+  }
+
+  function getExpectedPattern(index: number): RegExp {
+    const patterns = [
+      /entrada\s*:\s*in\s+std_logic_vector\s*\(\s*3\s+downto\s+0\s*\)/i,
+      /architecture\s+behavioral\s+of\s+bcd_7seg\s+is.*begin.*process\s*\(\s*entrada\s*\)/is,
+      /case\s+entrada\s+is.*when\s+"0000"\s*=>\s*segmentos\s*<=\s*"1111110".*when\s+"0001"\s*=>\s*segmentos\s*<=\s*"0110000".*when\s+"0010"\s*=>\s*segmentos\s*<=\s*"1101101"/is,
+      /when\s+"0011"\s*=>\s*segmentos\s*<=\s*"1111001".*when\s+"0100"\s*=>\s*segmentos\s*<=\s*"0110011".*when\s+"0101"\s*=>\s*segmentos\s*<=\s*"1011011".*when\s+"0110"\s*=>\s*segmentos\s*<=\s*"1011111"/is,
+      /when\s+"0111"\s*=>\s*segmentos\s*<=\s*"1110000".*when\s+"1000"\s*=>\s*segmentos\s*<=\s*"1111111".*when\s+"1001"\s*=>\s*segmentos\s*<=\s*"1111011"/is
+    ];
+    return patterns[index] || patterns[0];
+  }
 
   const [currentStep, setCurrentStep] = useState(0);
   const [userCode, setUserCode] = useState(steps[0].initialCode);
@@ -170,7 +154,7 @@ end behavioral;`,
     } else {
       setFeedback({
         type: "error",
-        message: "❌ Ops! O código não está correto ainda. Revise as instruções e tente novamente. Clique em 'Ver Dica' se precisar de ajuda."
+        message: t('tutorial.feedback.error')
       });
     }
   };
@@ -202,15 +186,15 @@ end behavioral;`,
     <div className="w-full max-w-7xl mx-auto space-y-6">
       <div className="text-center space-y-4">
         <h2 className="text-3xl font-bold bg-gradient-to-r from-tech-cyan via-tech-purple to-tech-pink bg-clip-text text-transparent">
-          Tutorial Passo a Passo: Decodificador BCD para 7 Segmentos
+          {t('tutorial.title')}
         </h2>
         <p className="text-muted-foreground">
-          Aprenda a desenvolver o código VHDL etapa por etapa com validação em tempo real
+          {t('tutorial.subtitle')}
         </p>
         
         <div className="space-y-2">
           <div className="flex items-center justify-between text-sm text-muted-foreground">
-            <span>Progresso: {completedSteps.length} de {steps.length} etapas concluídas</span>
+            <span>{t('tutorial.progress')}: {completedSteps.length} {t('tutorial.stepsCompleted')}</span>
             <span>{Math.round(progress)}%</span>
           </div>
           <Progress value={progress} className="h-2" />
@@ -220,7 +204,7 @@ end behavioral;`,
           <div className="flex items-center justify-center gap-2 p-4 bg-gradient-to-r from-green-500/10 to-tech-cyan/10 rounded-lg border border-green-500/30">
             <Trophy className="w-6 h-6 text-yellow-500" />
             <span className="text-lg font-semibold text-green-600 dark:text-green-400">
-              Parabéns! Você completou todas as etapas do tutorial!
+              {t('tutorial.allCompleted')}
             </span>
           </div>
         )}
@@ -244,7 +228,7 @@ end behavioral;`,
           <div className="space-y-2">
             <p className="text-muted-foreground">{steps[currentStep].description}</p>
             <div className="p-4 bg-muted/50 rounded-lg border border-border">
-              <p className="font-semibold mb-2">📋 Instruções:</p>
+              <p className="font-semibold mb-2">📋 {t('tutorial.instructions')}:</p>
               <p className="text-sm">{steps[currentStep].instruction}</p>
             </div>
           </div>
@@ -253,7 +237,7 @@ end behavioral;`,
             value={userCode}
             onChange={(e) => setUserCode(e.target.value)}
             className="font-mono text-sm min-h-[350px] bg-background/80"
-            placeholder="Digite seu código VHDL aqui..."
+            placeholder={t('tutorial.placeholder')}
           />
 
           <div className="flex gap-2">
@@ -262,7 +246,7 @@ end behavioral;`,
               className="flex-1"
               variant="default"
             >
-              Verificar Código
+              {t('tutorial.verify')}
             </Button>
             
             <Button
@@ -271,14 +255,14 @@ end behavioral;`,
               className="gap-2"
             >
               <Lightbulb className="w-4 h-4" />
-              {showHint ? "Esconder Dica" : "Ver Dica"}
+              {showHint ? t('tutorial.hideHint') : t('tutorial.showHint')}
             </Button>
           </div>
 
           {showHint && (
             <div className="p-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg">
               <p className="text-sm text-yellow-600 dark:text-yellow-400">
-                💡 <span className="font-semibold">Dica:</span> {steps[currentStep].hint}
+                💡 <span className="font-semibold">{t('tutorial.hint')}:</span> {steps[currentStep].hint}
               </p>
             </div>
           )}
@@ -312,7 +296,7 @@ end behavioral;`,
               variant="outline"
               disabled={currentStep === 0}
             >
-              ← Anterior
+              ← {t('tutorial.previous')}
             </Button>
             
             <Button
@@ -320,7 +304,7 @@ end behavioral;`,
               disabled={currentStep === steps.length - 1 || !isStepCompleted}
               className="gap-2"
             >
-              {isLastStep ? "Finalizar" : "Próximo"}
+              {isLastStep ? t('tutorial.finish') : t('tutorial.next')}
               {!isLastStep && <ArrowRight className="w-4 h-4" />}
             </Button>
           </div>
