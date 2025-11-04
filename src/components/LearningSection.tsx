@@ -1,7 +1,7 @@
 /* eslint-disable no-irregular-whitespace */
 import { useTranslation } from "react-i18next";
 
-import ConceptCard from "./ConceptCard";
+import  ConceptCard  from "./ConceptCard";
 
 import CodeExample from "./CodeExample";
 
@@ -29,7 +29,9 @@ const LearningSection = () => {
 
       example: "-- VHDL descreve hardware de forma textual",
 
-      color: "blue" as const
+      color: "blue" as const,
+
+      pdfLink: "/pdfs/oqueehVHDL.pdf"
 
     },
 
@@ -43,7 +45,9 @@ const LearningSection = () => {
 
       example: "IEEE Standard 1076-1987 (primeira versão)",
 
-      color: "purple" as const
+      color: "purple" as const,
+
+      pdfLink: "/pdfs/historiaVHDL.pdf"
 
     },
 
@@ -57,7 +61,8 @@ const LearningSection = () => {
 
       example: "Concorrência, tipos definidos pelo usuário, generics",
 
-      color: "cyan" as const
+      color: "cyan" as const,
+      pdfLink: "/pdfs/caracteristicasVHDL.pdf"
 
     }
 
@@ -77,7 +82,8 @@ const LearningSection = () => {
 
       example: "entity porta_and is port(a, b: in bit; y: out bit); end;",
 
-      color: "purple" as const
+      color: "purple" as const,
+      pdfLink: "/pdfs/entidadesEarquiteturasVHDL.pdf"
 
     },
 
@@ -91,7 +97,9 @@ const LearningSection = () => {
 
       example: "signal clk : std_logic; variable temp : integer;",
 
-      color: "blue" as const
+      color: "blue" as const,
+
+      pdfLink: "/pdfs/sinaisEvariaveisVHDL.pdf"
 
     },
 
@@ -105,7 +113,9 @@ const LearningSection = () => {
 
       example: "process(clk) begin if rising_edge(clk) then...",
 
-      color: "cyan" as const
+      color: "cyan" as const,
+
+      pdfLink: "/pdfs/processosEclockVHDL.pdf"
 
     },
 
@@ -119,7 +129,9 @@ const LearningSection = () => {
 
       example: "type estado is (idle, active, done);",
 
-      color: "green" as const
+      color: "green" as const,
+
+      pdfLink: "/pdfs/tiposDeDadosVHDL.pdf"
 
     },
 
@@ -133,7 +145,9 @@ const LearningSection = () => {
 
       example: "case estado_atual is when idle => ...",
 
-      color: "purple" as const
+      color: "purple" as const,
+
+      pdfLink: "/pdfs/maquinasDeEstadoVHDL.pdf"
 
     },
 
@@ -147,7 +161,9 @@ const LearningSection = () => {
 
       example: "component contador port(clk: in std_logic; ...);",
 
-      color: "blue" as const
+      color: "blue" as const,
+
+      pdfLink: "/pdfs/hierarquiaEcomponentesVHDL.pdf"
 
     }
 
