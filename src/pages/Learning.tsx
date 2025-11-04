@@ -11,21 +11,24 @@ const basicConcepts = [
     description: "VHDL (VHSIC Hardware Description Language) é uma linguagem de descrição de hardware usada para modelar sistemas eletrônicos digitais. Permite descrever tanto o comportamento quanto a estrutura de circuitos digitais.",
     icon: <BookOpen className="w-6 h-6" />,
     example: "-- VHDL descreve hardware de forma textual",
-    color: "blue" as const
+    color: "blue" as const,
+    pdfLink: "/pdfs/oqueehVHDL.pdf"
   },
   {
     title: "História",
     description: "Desenvolvida pelo Departamento de Defesa dos EUA nos anos 1980, VHDL tornou-se padrão IEEE 1076 em 1987. Foi criada para documentar e simular circuitos digitais complexos de forma padronizada.",
     icon: <History className="w-6 h-6" />,
     example: "IEEE Standard 1076-1987 (primeira versão)",
-    color: "purple" as const
+    color: "purple" as const,
+    pdfLink: "/pdfs/historiaVHDL.pdf"
   },
   {
     title: "Características",
     description: "Linguagem fortemente tipada, suporta paralelismo, hierarquia, simulação temporal e síntese. Ideal para FPGAs e ASICs, com recursos para teste e verificação de hardware.",
     icon: <Settings className="w-6 h-6" />,
     example: "Concorrência, tipos definidos pelo usuário, generics",
-    color: "cyan" as const
+    color: "cyan" as const,
+    pdfLink: "/pdfs/caracteristicasVHDL.pdf"
   }
 ];
 
@@ -35,42 +38,48 @@ const concepts = [
     description: "As estruturas fundamentais do VHDL. A entidade define as interfaces (portas) e a arquitetura descreve o comportamento interno.",
     icon: <Cpu className="w-6 h-6" />,
     example: "entity porta_and is port(a, b: in bit; y: out bit); end;",
-    color: "purple" as const
+    color: "purple" as const,
+    pdfLink: "/pdfs/entidadesEarquiteturas.pdf"
   },
   {
     title: "Sinais e Variáveis", 
     description: "Aprenda as diferenças entre sinais (conectam componentes) e variáveis (armazenam valores temporários).",
     icon: <Zap className="w-6 h-6" />,
     example: "signal clk : std_logic; variable temp : integer;",
-    color: "blue" as const
+    color: "blue" as const,
+    pdfLink: "/pdfs/sinaisEvariaveisVHDL.pdf"
   },
   {
     title: "Processos e Clock",
     description: "Processos definem comportamentos sequenciais e são fundamentais para circuitos síncronos.",
     icon: <Clock className="w-6 h-6" />,
     example: "process(clk) begin if rising_edge(clk) then...",
-    color: "cyan" as const
+    color: "cyan" as const,
+    pdfLink: "/pdfs/processosEclockVHDL.pdf"
   },
   {
     title: "Tipos de Dados",
     description: "VHDL oferece diversos tipos: bit, std_logic, integer, arrays e tipos personalizados.",
     icon: <Database className="w-6 h-6" />,
     example: "type estado is (idle, active, done);",
-    color: "green" as const
+    color: "green" as const,
+    pdfLink: "/pdfs/tiposDeDadosVHDL.pdf"
   },
   {
     title: "Máquinas de Estado",
     description: "Implemente controle complexo usando máquinas de estado finito (FSM).",
     icon: <Workflow className="w-6 h-6" />,
     example: "case estado_atual is when idle => ...",
-    color: "purple" as const
+    color: "purple" as const,
+    pdfLink: "/pdfs/maquinasDeEstadoVHDL.pdf"
   },
   {
     title: "Hierarquia e Componentes",
     description: "Crie designs modulares instanciando componentes e criando hierarquias.",
     icon: <Layers className="w-6 h-6" />,
     example: "component contador port(clk: in std_logic; ...);",
-    color: "blue" as const
+    color: "blue" as const,
+    pdfLink: "/pdfs/hierarquiaEcomponentesVHDL.pdf"
   }
 ];
 
