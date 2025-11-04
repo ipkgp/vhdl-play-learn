@@ -53,11 +53,11 @@ const Resources = () => {
         <VHDLGlossary />
       </section>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 items-stretch">
           {resourceCategories.map((category, index) => (
             <Card
               key={index}
-              className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in"
+              className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1 animate-fade-in flex flex-col"
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <CardHeader>
@@ -66,7 +66,7 @@ const Resources = () => {
                   <CardTitle>{category.title}</CardTitle>
                 </div>
               </CardHeader>
-              <CardContent>
+              <CardContent className="flex-1">
                 <ul className="space-y-3">
                   {category.items.map((item, itemIndex) => (
                     <li key={itemIndex}>

@@ -35,36 +35,36 @@ export default function ConceptCard(props: ConceptCardProps) {
     green: "text-tech-green"
   };
   
-  return (
-    <div className="card">
-        <Card className={`transition-all duration-300 hover:scale-105 hover:shadow-2xl bg-card/50 backdrop-blur-sm border-2 ${colorClasses[color]} group`}>
-        <CardHeader>
-          <div className={`w-12 h-12 rounded-lg bg-gradient-to-br from-${color === 'purple' ? 'tech-purple' : color === 'blue' ? 'tech-blue' : color === 'cyan' ? 'tech-cyan' : 'tech-green'}/20 to-${color === 'purple' ? 'tech-purple' : color === 'blue' ? 'tech-blue' : color === 'cyan' ? 'tech-cyan' : 'tech-green'}/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-            <div className={iconColors[color]}>
-              {icon}
-            </div>
+  return (
+    <Card className={`transition-all duration-300 hover:scale-105 hover:shadow-2xl bg-card/50 backdrop-blur-sm border-2 ${colorClasses[color]} group h-full flex flex-col`}>
+      <CardHeader>
+        <div className={`w-12 h-12 rounded-lg bg-gradient-to-br from-${color === 'purple' ? 'tech-purple' : color === 'blue' ? 'tech-blue' : color === 'cyan' ? 'tech-cyan' : 'tech-green'}/20 to-${color === 'purple' ? 'tech-purple' : color === 'blue' ? 'tech-blue' : color === 'cyan' ? 'tech-cyan' : 'tech-green'}/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+          <div className={iconColors[color]}>
+            {icon}
           </div>
-          <CardTitle className="text-xl font-semibold text-foreground">{title}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="text-muted-foreground mb-4 leading-relaxed">{description}</p>
-          {example && (
-            <div className="bg-gradient-to-r from-muted/30 to-muted/10 rounded-lg p-4 border border-border/50">
-              <code className="text-sm text-tech-cyan font-mono">{example}</code>
-            </div>
-          )}
-          {pdfLink && (
-            <div className="px-6 py-0 -mx-0 -mb-10 mt-0">
-              <Button
-                asChild
-                className={`w-full font-semibold ${buttonColorClasses[color]}`}
-              ><a href={pdfLink} target="_blank" rel="noopener noreferrer">
-                  Saiba mais...
-                </a></Button>
-            </div>
-            )}
-        </CardContent>
-      </Card>
-    </div>
-  );
+        </div>
+        <CardTitle className="text-xl font-semibold text-foreground">{title}</CardTitle>
+      </CardHeader>
+      <CardContent className="flex-1 flex flex-col">
+        <p className="text-muted-foreground mb-4 leading-relaxed">{description}</p>
+        {example && (
+          <div className="bg-gradient-to-r from-muted/30 to-muted/10 rounded-lg p-4 border border-border/50">
+            <code className="text-sm text-tech-cyan font-mono">{example}</code>
+          </div>
+        )}
+        {pdfLink && (
+          <div className="mt-auto pt-4">
+            <Button
+              asChild
+              className={`w-full font-semibold ${buttonColorClasses[color]}`}
+            >
+              <a href={pdfLink} target="_blank" rel="noopener noreferrer">
+                Saiba mais...
+              </a>
+            </Button>
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  );
 }
