@@ -6,7 +6,6 @@ import VHDLQuizSystem from "@/components/VHDLQuizSystem";
 import VHDLIntermediateExercises from "@/components/VHDLIntermediateExercises";
 import VHDLStepByStepTutorial from "@/components/VHDLStepByStepTutorial";
 import VHDLSevenSegmentLab from "@/components/VHDLSevenSegmentLab";
-import VHDLGlossary from "@/components/VHDLGlossary";
 import VHDLGamification from "@/components/VHDLGamification";
 import Resources from "./Resources";
 import About from "./About";
@@ -45,11 +44,7 @@ const Index = () => {
         <VHDLSevenSegmentLab />
       </section>
       
-      <section id="glossary" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20 scroll-mt-16">
-        <VHDLGlossary />
-      </section>
-      
-      <section id="achievements" className="py-20 px-4 bg-gradient-to-b from-muted/20 to-background scroll-mt-16">
+      <section id="achievements" className="py-20 px-4 bg-gradient-to-b from-background to-muted/20 scroll-mt-16">
         <VHDLGamification />
       </section>
 
