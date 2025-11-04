@@ -89,7 +89,7 @@ const Examples = () => {
                 className="animate-fade-in mb-16"
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                   <CodeExample {...example} />
                   <CircuitVisualization
                     type={index === 0 ? "counter" : "flipflop"}
