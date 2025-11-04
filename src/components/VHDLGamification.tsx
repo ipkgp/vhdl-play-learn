@@ -181,9 +181,9 @@ const VHDLGamification = () => {
             <Award className="w-6 h-6 text-primary" />
             {t('gamification.earnedBadges', { count: earnedBadges.length })}
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
             {earnedBadges.map((badge) => (
-              <Card key={badge.id} className="border-primary/30 bg-primary/5 relative overflow-hidden">
+              <Card key={badge.id} className="border-primary/30 bg-primary/5 relative overflow-hidden flex flex-col">
                 <div className="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full" />
                 <CardHeader>
                   <div className="flex items-center gap-3">
@@ -194,7 +194,7 @@ const VHDLGamification = () => {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex flex-col justify-between">
                   <p className="text-sm text-muted-foreground mb-2">{badge.description}</p>
                   <div className="flex items-center gap-2 text-xs text-green-600 dark:text-green-400">
                     <Trophy className="w-3 h-3" />
@@ -214,9 +214,9 @@ const VHDLGamification = () => {
             <Target className="w-6 h-6 text-muted-foreground" />
             {t('gamification.nextAchievements', { count: lockedBadges.length })}
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 items-stretch">
             {lockedBadges.map((badge) => (
-              <Card key={badge.id} className="border-muted opacity-60 relative">
+              <Card key={badge.id} className="border-muted opacity-60 relative flex flex-col">
                 <CardHeader>
                   <div className="flex items-center gap-3">
                     <div className="text-muted-foreground">{badge.icon}</div>
@@ -226,7 +226,7 @@ const VHDLGamification = () => {
                     </div>
                   </div>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-1 flex flex-col justify-between">
                   <p className="text-sm text-muted-foreground mb-2">{badge.description}</p>
                   <div className="bg-muted/50 p-2 rounded text-xs">
                     <p className="font-semibold mb-1">{t('gamification.howToUnlock')}:</p>
